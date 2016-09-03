@@ -1,0 +1,38 @@
+{
+    "author": "marco@4koepcke.de",
+    "dependencies": {},
+    "keywords": [],
+    "name": "time-gear",
+    "pebble": {
+        "displayName": "Time Gear",
+        "enableMultiJS": false,
+        "messageKeys": [],
+        "projectType": "native",
+        "resources": {
+            "media": [
+                {
+                    "file": "images/test.png",
+                    "name": "IMAGE_TEST",
+                    "storageFormat": "png",
+                    "targetPlatforms": [
+                        "basalt",
+                        "chalk",
+                        "diorite"
+                    ],
+                    "type": "bitmap"
+                }
+            ]
+        },
+        "sdkVersion": "3",
+        "targetPlatforms": [
+            "basalt",
+            "chalk",
+            "diorite"
+        ],
+        "uuid": "027e5574-f659-4c37-b71c-9c47ac8f9d9f",
+        "watchapp": {
+            "watchface": true
+        }
+    },
+    "version": "1.0.0"
+}
