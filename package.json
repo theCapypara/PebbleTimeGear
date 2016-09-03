@@ -1,986 +1,971 @@
 {
-  "author": "marco@4koepcke.de",
-  "dependencies": {},
-  "keywords": [],
-  "name": "time-gear",
-  "pebble": {
-    "displayName": "Time Gear",
-    "enableMultiJS": false,
-    "messageKeys": [],
-    "projectType": "native",
-    "resources": {
-      "media": [
-        {
-          "file": "images/10.png",
-          "name": "IMAGE_BATTERY_10",
-          "storageFormat": "png",
-          "targetPlatforms": [
-            "basalt",
-            "chalk",
-            "diorite"
-          ],
-          "type": "bitmap"
-        },
-        {
-          "file": "images/20.png",
-          "name": "IMAGE_BATTERY_20",
-          "storageFormat": "png",
-          "targetPlatforms": [
-            "basalt",
-            "chalk",
-            "diorite"
-          ],
-          "type": "bitmap"
-        },
-        {
-          "file": "images/30.png",
-          "name": "IMAGE_BATTERY_30",
-          "storageFormat": "png",
-          "targetPlatforms": [
-            "basalt",
-            "chalk",
-            "diorite"
-          ],
-          "type": "bitmap"
-        },
-        {
-          "file": "images/40.png",
-          "name": "IMAGE_BATTERY_40",
-          "storageFormat": "png",
-          "targetPlatforms": [
-            "basalt",
-            "chalk",
-            "diorite"
-          ],
-          "type": "bitmap"
-        },
-        {
-          "file": "images/50.png",
-          "name": "IMAGE_BATTERY_50",
-          "storageFormat": "png",
-          "targetPlatforms": [
-            "basalt",
-            "chalk",
-            "diorite"
-          ],
-          "type": "bitmap"
-        },
-        {
-          "file": "images/60.png",
-          "name": "IMAGE_BATTERY_60",
-          "storageFormat": "png",
-          "targetPlatforms": [
-            "basalt",
-            "chalk",
-            "diorite"
-          ],
-          "type": "bitmap"
-        },
-        {
-          "file": "images/70.png",
-          "name": "IMAGE_BATTERY_70",
-          "storageFormat": "png",
-          "targetPlatforms": [
-            "basalt",
-            "chalk",
-            "diorite"
-          ],
-          "type": "bitmap"
-        },
-        {
-          "file": "images/80.png",
-          "name": "IMAGE_BATTERY_80",
-          "storageFormat": "png",
-          "targetPlatforms": [
-            "basalt",
-            "chalk",
-            "diorite"
-          ],
-          "type": "bitmap"
-        },
-        {
-          "file": "images/90.png",
-          "name": "IMAGE_BATTERY_90",
-          "storageFormat": "png",
-          "targetPlatforms": [
-            "basalt",
-            "chalk",
-            "diorite"
-          ],
-          "type": "bitmap"
-        },
-        {
-          "file": "images/100.png",
-          "name": "IMAGE_BATTERY_100",
-          "storageFormat": "png",
-          "targetPlatforms": [
-            "basalt",
-            "chalk",
-            "diorite"
-          ],
-          "type": "bitmap"
-        },
-        {
-          "file": "images/no-bluetooth.png",
-          "name": "IMAGE_NO_BLUETOOTH",
-          "storageFormat": "png",
-          "targetPlatforms": [
-            "basalt",
-            "chalk",
-            "diorite"
-          ],
-          "type": "bitmap"
-        },
-        {
-          "file": "images/tb_b.png",
-          "name": "IMAGE_TEXTBOX_B",
-          "storageFormat": "png",
-          "targetPlatforms": [
-            "basalt",
-            "chalk",
-            "diorite"
-          ],
-          "type": "bitmap"
-        },
-        {
-          "file": "images/tb_bl.png",
-          "name": "IMAGE_TEXTBOX_BL",
-          "storageFormat": "png",
-          "targetPlatforms": [
-            "basalt",
-            "chalk",
-            "diorite"
-          ],
-          "type": "bitmap"
-        },
-        {
-          "file": "images/tb_br.png",
-          "name": "IMAGE_TEXTBOX_BR",
-          "storageFormat": "png",
-          "targetPlatforms": [
-            "basalt",
-            "chalk",
-            "diorite"
-          ],
-          "type": "bitmap"
-        },
-        {
-          "file": "images/tb_t.png",
-          "name": "IMAGE_TEXTBOX_T",
-          "storageFormat": "png",
-          "targetPlatforms": [
-            "basalt",
-            "chalk",
-            "diorite"
-          ],
-          "type": "bitmap"
-        },
-        {
-          "file": "images/tb_tl.png",
-          "name": "IMAGE_TEXTBOX_TL",
-          "storageFormat": "png",
-          "targetPlatforms": [
-            "basalt",
-            "chalk",
-            "diorite"
-          ],
-          "type": "bitmap"
-        },
-        {
-          "file": "images/tb_tr.png",
-          "name": "IMAGE_TEXTBOX_TR",
-          "storageFormat": "png",
-          "targetPlatforms": [
-            "basalt",
-            "chalk",
-            "diorite"
-          ],
-          "type": "bitmap"
-        },
-        {
-          "file": "images/timegear_main.png",
-          "name": "IMAGE_TIMEGEAR",
-          "storageFormat": "png",
-          "targetPlatforms": [
-            "basalt",
-            "chalk",
-            "diorite"
-          ],
-          "type": "bitmap"
-        },
-        {
-          "file": "images/bg1.png",
-          "name": "IMAGE_BG_1",
-          "storageFormat": "png",
-          "targetPlatforms": [
-            "basalt",
-            "chalk",
-            "diorite"
-          ],
-          "type": "bitmap"
-        },
-        {
-          "file": "images/bar1.png",
-          "name": "IMAGE_BAR_FULL",
-          "storageFormat": "png",
-          "targetPlatforms": [
-            "basalt",
-            "chalk",
-            "diorite"
-          ],
-          "type": "bitmap"
-        },
-        {
-          "file": "images/bar2.png",
-          "name": "IMAGE_BAR_EMPTY",
-          "storageFormat": "png",
-          "targetPlatforms": [
-            "basalt",
-            "chalk",
-            "diorite"
-          ],
-          "type": "bitmap"
-        },
-        {
-          "file": "images/font1/tiles-0.png",
-          "name": "IMAGE_FONT1_0",
-          "storageFormat": "png",
-          "targetPlatforms": [
-            "basalt",
-            "chalk",
-            "diorite"
-          ],
-          "type": "bitmap"
-        },
-        {
-          "file": "images/font1/tiles-1.png",
-          "name": "IMAGE_FONT1_1",
-          "storageFormat": "png",
-          "targetPlatforms": [
-            "basalt",
-            "chalk",
-            "diorite"
-          ],
-          "type": "bitmap"
-        },
-        {
-          "file": "images/font1/tiles-10.png",
-          "name": "IMAGE_FONT1_10",
-          "storageFormat": "png",
-          "targetPlatforms": [
-            "basalt",
-            "chalk",
-            "diorite"
-          ],
-          "type": "bitmap"
-        },
-        {
-          "file": "images/font1/tiles-100.png",
-          "name": "IMAGE_FONT1_100",
-          "storageFormat": "png",
-          "targetPlatforms": [
-            "basalt",
-            "chalk",
-            "diorite"
-          ],
-          "type": "bitmap"
-        },
-        {
-          "file": "images/font1/tiles-101.png",
-          "name": "IMAGE_FONT1_101",
-          "storageFormat": "png",
-          "targetPlatforms": [
-            "basalt",
-            "chalk",
-            "diorite"
-          ],
-          "type": "bitmap"
-        },
-
-        {
-          "file": "images/font1/tiles-102.png",
-          "name": "IMAGE_FONT1_102",
-          "storageFormat": "png",
-          "targetPlatforms": [
-            "basalt",
-            "chalk",
-            "diorite"
-          ],
-          "type": "bitmap"
-        },
-
-        {
-          "file": "images/font1/tiles-103.png",
-          "name": "IMAGE_FONT1_103",
-          "storageFormat": "png",
-          "targetPlatforms": [
-            "basalt",
-            "chalk",
-            "diorite"
-          ],
-          "type": "bitmap"
-        },
-
-        {
-          "file": "images/font1/tiles-104.png",
-          "name": "IMAGE_FONT1_104",
-          "storageFormat": "png",
-          "targetPlatforms": [
-            "basalt",
-            "chalk",
-            "diorite"
-          ],
-          "type": "bitmap"
-        },
-
-        {
-          "file": "images/font1/tiles-105.png",
-          "name": "IMAGE_FONT1_105",
-          "storageFormat": "png",
-          "targetPlatforms": [
-            "basalt",
-            "chalk",
-            "diorite"
-          ],
-          "type": "bitmap"
-        },
-
-        {
-          "file": "images/font1/tiles-106.png",
-          "name": "IMAGE_FONT1_106",
-          "storageFormat": "png",
-          "targetPlatforms": [
-            "basalt",
-            "chalk",
-            "diorite"
-          ],
-          "type": "bitmap"
-        },
-
-        {
-          "file": "images/font1/tiles-107.png",
-          "name": "IMAGE_FONT1_107",
-          "storageFormat": "png",
-          "targetPlatforms": [
-            "basalt",
-            "chalk",
-            "diorite"
-          ],
-          "type": "bitmap"
-        },
-
-        {
-          "file": "images/font1/tiles-108.png",
-          "name": "IMAGE_FONT1_108",
-          "storageFormat": "png",
-          "targetPlatforms": [
-            "basalt",
-            "chalk",
-            "diorite"
-          ],
-          "type": "bitmap"
-        },
-
-        {
-          "file": "images/font1/tiles-109.png",
-          "name": "IMAGE_FONT1_109",
-          "storageFormat": "png",
-          "targetPlatforms": [
-            "basalt",
-            "chalk",
-            "diorite"
-          ],
-          "type": "bitmap"
-        },
-
-        {
-          "file": "images/font1/tiles-11.png",
-          "name": "IMAGE_FONT1_11",
-          "storageFormat": "png",
-          "targetPlatforms": [
-            "basalt",
-            "chalk",
-            "diorite"
-          ],
-          "type": "bitmap"
-        },
-
-        {
-          "file": "images/font1/tiles-110.png",
-          "name": "IMAGE_FONT1_110",
-          "storageFormat": "png",
-          "targetPlatforms": [
-            "basalt",
-            "chalk",
-            "diorite"
-          ],
-          "type": "bitmap"
-        },
-
-        {
-          "file": "images/font1/tiles-111.png",
-          "name": "IMAGE_FONT1_111",
-          "storageFormat": "png",
-          "targetPlatforms": [
-            "basalt",
-            "chalk",
-            "diorite"
-          ],
-          "type": "bitmap"
-        },
-
-        {
-          "file": "images/font1/tiles-112.png",
-          "name": "IMAGE_FONT1_112",
-          "storageFormat": "png",
-          "targetPlatforms": [
-            "basalt",
-            "chalk",
-            "diorite"
-          ],
-          "type": "bitmap"
-        },
-
-        {
-          "file": "images/font1/tiles-113.png",
-          "name": "IMAGE_FONT1_113",
-          "storageFormat": "png",
-          "targetPlatforms": [
-            "basalt",
-            "chalk",
-            "diorite"
-          ],
-          "type": "bitmap"
-        },
-
-        {
-          "file": "images/font1/tiles-114.png",
-          "name": "IMAGE_FONT1_114",
-          "storageFormat": "png",
-          "targetPlatforms": [
-            "basalt",
-            "chalk",
-            "diorite"
-          ],
-          "type": "bitmap"
-        },
-
-        {
-          "file": "images/font1/tiles-115.png",
-          "name": "IMAGE_FONT1_115",
-          "storageFormat": "png",
-          "targetPlatforms": [
-            "basalt",
-            "chalk",
-            "diorite"
-          ],
-          "type": "bitmap"
-        },
-
-        {
-          "file": "images/font1/tiles-116.png",
-          "name": "IMAGE_FONT1_116",
-          "storageFormat": "png",
-          "targetPlatforms": [
-            "basalt",
-            "chalk",
-            "diorite"
-          ],
-          "type": "bitmap"
-        },
-
-        {
-          "file": "images/font1/tiles-117.png",
-          "name": "IMAGE_FONT1_117",
-          "storageFormat": "png",
-          "targetPlatforms": [
-            "basalt",
-            "chalk",
-            "diorite"
-          ],
-          "type": "bitmap"
-        },
-
-        {
-          "file": "images/font1/tiles-12.png",
-          "name": "IMAGE_FONT1_12",
-          "storageFormat": "png",
-          "targetPlatforms": [
-            "basalt",
-            "chalk",
-            "diorite"
-          ],
-          "type": "bitmap"
-        },
-
-        {
-          "file": "images/font1/tiles-13.png",
-          "name": "IMAGE_FONT1_13",
-          "storageFormat": "png",
-          "targetPlatforms": [
-            "basalt",
-            "chalk",
-            "diorite"
-          ],
-          "type": "bitmap"
-        },
-
-        {
-          "file": "images/font1/tiles-15.png",
-          "name": "IMAGE_FONT1_15",
-          "storageFormat": "png",
-          "targetPlatforms": [
-            "basalt",
-            "chalk",
-            "diorite"
-          ],
-          "type": "bitmap"
-        },
-
-        {
-          "file": "images/font1/tiles-17.png",
-          "name": "IMAGE_FONT1_17",
-          "storageFormat": "png",
-          "targetPlatforms": [
-            "basalt",
-            "chalk",
-            "diorite"
-          ],
-          "type": "bitmap"
-        },
-
-        {
-          "file": "images/font1/tiles-18.png",
-          "name": "IMAGE_FONT1_18",
-          "storageFormat": "png",
-          "targetPlatforms": [
-            "basalt",
-            "chalk",
-            "diorite"
-          ],
-          "type": "bitmap"
-        },
-
-        {
-          "file": "images/font1/tiles-2.png",
-          "name": "IMAGE_FONT1_2",
-          "storageFormat": "png",
-          "targetPlatforms": [
-            "basalt",
-            "chalk",
-            "diorite"
-          ],
-          "type": "bitmap"
-        },
-
-        {
-          "file": "images/font1/tiles-3.png",
-          "name": "IMAGE_FONT1_3",
-          "storageFormat": "png",
-          "targetPlatforms": [
-            "basalt",
-            "chalk",
-            "diorite"
-          ],
-          "type": "bitmap"
-        },
-
-        {
-          "file": "images/font1/tiles-4.png",
-          "name": "IMAGE_FONT1_4",
-          "storageFormat": "png",
-          "targetPlatforms": [
-            "basalt",
-            "chalk",
-            "diorite"
-          ],
-          "type": "bitmap"
-        },
-
-        {
-          "file": "images/font1/tiles-5.png",
-          "name": "IMAGE_FONT1_5",
-          "storageFormat": "png",
-          "targetPlatforms": [
-            "basalt",
-            "chalk",
-            "diorite"
-          ],
-          "type": "bitmap"
-        },
-
-        {
-          "file": "images/font1/tiles-50.png",
-          "name": "IMAGE_FONT1_50",
-          "storageFormat": "png",
-          "targetPlatforms": [
-            "basalt",
-            "chalk",
-            "diorite"
-          ],
-          "type": "bitmap"
-        },
-
-        {
-          "file": "images/font1/tiles-51.png",
-          "name": "IMAGE_FONT1_51",
-          "storageFormat": "png",
-          "targetPlatforms": [
-            "basalt",
-            "chalk",
-            "diorite"
-          ],
-          "type": "bitmap"
-        },
-
-        {
-          "file": "images/font1/tiles-52.png",
-          "name": "IMAGE_FONT1_52",
-          "storageFormat": "png",
-          "targetPlatforms": [
-            "basalt",
-            "chalk",
-            "diorite"
-          ],
-          "type": "bitmap"
-        },
-
-        {
-          "file": "images/font1/tiles-53.png",
-          "name": "IMAGE_FONT1_53",
-          "storageFormat": "png",
-          "targetPlatforms": [
-            "basalt",
-            "chalk",
-            "diorite"
-          ],
-          "type": "bitmap"
-        },
-
-        {
-          "file": "images/font1/tiles-54.png",
-          "name": "IMAGE_FONT1_54",
-          "storageFormat": "png",
-          "targetPlatforms": [
-            "basalt",
-            "chalk",
-            "diorite"
-          ],
-          "type": "bitmap"
-        },
-
-        {
-          "file": "images/font1/tiles-55.png",
-          "name": "IMAGE_FONT1_55",
-          "storageFormat": "png",
-          "targetPlatforms": [
-            "basalt",
-            "chalk",
-            "diorite"
-          ],
-          "type": "bitmap"
-        },
-
-        {
-          "file": "images/font1/tiles-56.png",
-          "name": "IMAGE_FONT1_56",
-          "storageFormat": "png",
-          "targetPlatforms": [
-            "basalt",
-            "chalk",
-            "diorite"
-          ],
-          "type": "bitmap"
-        },
-
-        {
-          "file": "images/font1/tiles-57.png",
-          "name": "IMAGE_FONT1_57",
-          "storageFormat": "png",
-          "targetPlatforms": [
-            "basalt",
-            "chalk",
-            "diorite"
-          ],
-          "type": "bitmap"
-        },
-
-        {
-          "file": "images/font1/tiles-58.png",
-          "name": "IMAGE_FONT1_58",
-          "storageFormat": "png",
-          "targetPlatforms": [
-            "basalt",
-            "chalk",
-            "diorite"
-          ],
-          "type": "bitmap"
-        },
-
-        {
-          "file": "images/font1/tiles-59.png",
-          "name": "IMAGE_FONT1_59",
-          "storageFormat": "png",
-          "targetPlatforms": [
-            "basalt",
-            "chalk",
-            "diorite"
-          ],
-          "type": "bitmap"
-        },
-
-        {
-          "file": "images/font1/tiles-6.png",
-          "name": "IMAGE_FONT1_6",
-          "storageFormat": "png",
-          "targetPlatforms": [
-            "basalt",
-            "chalk",
-            "diorite"
-          ],
-          "type": "bitmap"
-        },
-
-        {
-          "file": "images/font1/tiles-60.png",
-          "name": "IMAGE_FONT1_60",
-          "storageFormat": "png",
-          "targetPlatforms": [
-            "basalt",
-            "chalk",
-            "diorite"
-          ],
-          "type": "bitmap"
-        },
-
-        {
-          "file": "images/font1/tiles-61.png",
-          "name": "IMAGE_FONT1_61",
-          "storageFormat": "png",
-          "targetPlatforms": [
-            "basalt",
-            "chalk",
-            "diorite"
-          ],
-          "type": "bitmap"
-        },
-
-        {
-          "file": "images/font1/tiles-62.png",
-          "name": "IMAGE_FONT1_62",
-          "storageFormat": "png",
-          "targetPlatforms": [
-            "basalt",
-            "chalk",
-            "diorite"
-          ],
-          "type": "bitmap"
-        },
-
-        {
-          "file": "images/font1/tiles-7.png",
-          "name": "IMAGE_FONT1_7",
-          "storageFormat": "png",
-          "targetPlatforms": [
-            "basalt",
-            "chalk",
-            "diorite"
-          ],
-          "type": "bitmap"
-        },
-
-        {
-          "file": "images/font1/tiles-75.png",
-          "name": "IMAGE_FONT1_75",
-          "storageFormat": "png",
-          "targetPlatforms": [
-            "basalt",
-            "chalk",
-            "diorite"
-          ],
-          "type": "bitmap"
-        },
-
-        {
-          "file": "images/font1/tiles-76.png",
-          "name": "IMAGE_FONT1_76",
-          "storageFormat": "png",
-          "targetPlatforms": [
-            "basalt",
-            "chalk",
-            "diorite"
-          ],
-          "type": "bitmap"
-        },
-
-        {
-          "file": "images/font1/tiles-77.png",
-          "name": "IMAGE_FONT1_77",
-          "storageFormat": "png",
-          "targetPlatforms": [
-            "basalt",
-            "chalk",
-            "diorite"
-          ],
-          "type": "bitmap"
-        },
-
-        {
-          "file": "images/font1/tiles-78.png",
-          "name": "IMAGE_FONT1_78",
-          "storageFormat": "png",
-          "targetPlatforms": [
-            "basalt",
-            "chalk",
-            "diorite"
-          ],
-          "type": "bitmap"
-        },
-
-        {
-          "file": "images/font1/tiles-79.png",
-          "name": "IMAGE_FONT1_79",
-          "storageFormat": "png",
-          "targetPlatforms": [
-            "basalt",
-            "chalk",
-            "diorite"
-          ],
-          "type": "bitmap"
-        },
-
-        {
-          "file": "images/font1/tiles-8.png",
-          "name": "IMAGE_FONT1_8",
-          "storageFormat": "png",
-          "targetPlatforms": [
-            "basalt",
-            "chalk",
-            "diorite"
-          ],
-          "type": "bitmap"
-        },
-
-        {
-          "file": "images/font1/tiles-80.png",
-          "name": "IMAGE_FONT1_80",
-          "storageFormat": "png",
-          "targetPlatforms": [
-            "basalt",
-            "chalk",
-            "diorite"
-          ],
-          "type": "bitmap"
-        },
-
-        {
-          "file": "images/font1/tiles-81.png",
-          "name": "IMAGE_FONT1_81",
-          "storageFormat": "png",
-          "targetPlatforms": [
-            "basalt",
-            "chalk",
-            "diorite"
-          ],
-          "type": "bitmap"
-        },
-
-        {
-          "file": "images/font1/tiles-82.png",
-          "name": "IMAGE_FONT1_82",
-          "storageFormat": "png",
-          "targetPlatforms": [
-            "basalt",
-            "chalk",
-            "diorite"
-          ],
-          "type": "bitmap"
-        },
-
-        {
-          "file": "images/font1/tiles-83.png",
-          "name": "IMAGE_FONT1_83",
-          "storageFormat": "png",
-          "targetPlatforms": [
-            "basalt",
-            "chalk",
-            "diorite"
-          ],
-          "type": "bitmap"
-        },
-
-        {
-          "file": "images/font1/tiles-84.png",
-          "name": "IMAGE_FONT1_84",
-          "storageFormat": "png",
-          "targetPlatforms": [
-            "basalt",
-            "chalk",
-            "diorite"
-          ],
-          "type": "bitmap"
-        },
-
-        {
-          "file": "images/font1/tiles-85.png",
-          "name": "IMAGE_FONT1_85",
-          "storageFormat": "png",
-          "targetPlatforms": [
-            "basalt",
-            "chalk",
-            "diorite"
-          ],
-          "type": "bitmap"
-        },
-
-        {
-          "file": "images/font1/tiles-86.png",
-          "name": "IMAGE_FONT1_86",
-          "storageFormat": "png",
-          "targetPlatforms": [
-            "basalt",
-            "chalk",
-            "diorite"
-          ],
-          "type": "bitmap"
-        },
-
-        {
-          "file": "images/font1/tiles-87.png",
-          "name": "IMAGE_FONT1_87",
-          "storageFormat": "png",
-          "targetPlatforms": [
-            "basalt",
-            "chalk",
-            "diorite"
-          ],
-          "type": "bitmap"
-        },
-
-        {
-          "file": "images/font1/tiles-9.png",
-          "name": "IMAGE_FONT1_9",
-          "storageFormat": "png",
-          "targetPlatforms": [
-            "basalt",
-            "chalk",
-            "diorite"
-          ],
-          "type": "bitmap"
+    "author": "marco@4koepcke.de",
+    "dependencies": {},
+    "keywords": [],
+    "name": "time-gear",
+    "pebble": {
+        "displayName": "Time Gear",
+        "enableMultiJS": false,
+        "messageKeys": [],
+        "projectType": "native",
+        "resources": {
+            "media": [
+                {
+                    "file": "images/tb_l.png",
+                    "name": "IMAGE_TEXTBOX_L",
+                    "targetPlatforms": [
+                        "basalt",
+                        "chalk",
+                        "diorite"
+                    ],
+                    "type": "bitmap"
+                },
+                {
+                    "file": "images/tb_r.png",
+                    "name": "IMAGE_TEXTBOX_R",
+                    "targetPlatforms": [
+                        "basalt",
+                        "chalk",
+                        "diorite"
+                    ],
+                    "type": "bitmap"
+                },
+                {
+                    "characterRegex": "[0-9:]",
+                    "file": "fonts/PMD_1.1.ttf",
+                    "name": "FONT_PMD_21",
+                    "targetPlatforms": [
+                        "basalt",
+                        "chalk",
+                        "diorite"
+                    ],
+                    "type": "font"
+                },
+                {
+                    "characterRegex": "[0-9a-zA-Z,.-;:_()?!'\u00f6\u00fc\u00e4\u00df\u00e9\u00e1\u00ed]",
+                    "file": "fonts/PMD_1.1.ttf",
+                    "name": "FONT_PMD_11",
+                    "targetPlatforms": [
+                        "basalt",
+                        "chalk",
+                        "diorite"
+                    ],
+                    "type": "font"
+                },
+                {
+                    "file": "images/timegear_main.png",
+                    "name": "IMAGE_TIMEGEAR",
+                    "storageFormat": "png",
+                    "targetPlatforms": [
+                        "basalt",
+                        "chalk",
+                        "diorite"
+                    ],
+                    "type": "bitmap"
+                },
+                {
+                    "file": "images/tb_tr.png",
+                    "name": "IMAGE_TEXTBOX_TR",
+                    "storageFormat": "png",
+                    "targetPlatforms": [
+                        "basalt",
+                        "chalk",
+                        "diorite"
+                    ],
+                    "type": "bitmap"
+                },
+                {
+                    "file": "images/tb_tl.png",
+                    "name": "IMAGE_TEXTBOX_TL",
+                    "storageFormat": "png",
+                    "targetPlatforms": [
+                        "basalt",
+                        "chalk",
+                        "diorite"
+                    ],
+                    "type": "bitmap"
+                },
+                {
+                    "file": "images/tb_t.png",
+                    "name": "IMAGE_TEXTBOX_T",
+                    "storageFormat": "png",
+                    "targetPlatforms": [
+                        "basalt",
+                        "chalk",
+                        "diorite"
+                    ],
+                    "type": "bitmap"
+                },
+                {
+                    "file": "images/tb_br.png",
+                    "name": "IMAGE_TEXTBOX_BR",
+                    "storageFormat": "png",
+                    "targetPlatforms": [
+                        "basalt",
+                        "chalk",
+                        "diorite"
+                    ],
+                    "type": "bitmap"
+                },
+                {
+                    "file": "images/tb_bl.png",
+                    "name": "IMAGE_TEXTBOX_BL",
+                    "storageFormat": "png",
+                    "targetPlatforms": [
+                        "basalt",
+                        "chalk",
+                        "diorite"
+                    ],
+                    "type": "bitmap"
+                },
+                {
+                    "file": "images/tb_b.png",
+                    "name": "IMAGE_TEXTBOX_B",
+                    "storageFormat": "png",
+                    "targetPlatforms": [
+                        "basalt",
+                        "chalk",
+                        "diorite"
+                    ],
+                    "type": "bitmap"
+                },
+                {
+                    "file": "images/no-bluetooth.png",
+                    "name": "IMAGE_NO_BLUETOOTH",
+                    "storageFormat": "png",
+                    "targetPlatforms": [
+                        "basalt",
+                        "chalk",
+                        "diorite"
+                    ],
+                    "type": "bitmap"
+                },
+                {
+                    "file": "images/tiles-9.png",
+                    "name": "IMAGE_FONT1_9",
+                    "storageFormat": "png",
+                    "targetPlatforms": [
+                        "basalt",
+                        "chalk",
+                        "diorite"
+                    ],
+                    "type": "bitmap"
+                },
+                {
+                    "file": "images/tiles-87.png",
+                    "name": "IMAGE_FONT1_87",
+                    "storageFormat": "png",
+                    "targetPlatforms": [
+                        "basalt",
+                        "chalk",
+                        "diorite"
+                    ],
+                    "type": "bitmap"
+                },
+                {
+                    "file": "images/tiles-86.png",
+                    "name": "IMAGE_FONT1_86",
+                    "storageFormat": "png",
+                    "targetPlatforms": [
+                        "basalt",
+                        "chalk",
+                        "diorite"
+                    ],
+                    "type": "bitmap"
+                },
+                {
+                    "file": "images/tiles-85.png",
+                    "name": "IMAGE_FONT1_85",
+                    "storageFormat": "png",
+                    "targetPlatforms": [
+                        "basalt",
+                        "chalk",
+                        "diorite"
+                    ],
+                    "type": "bitmap"
+                },
+                {
+                    "file": "images/tiles-84.png",
+                    "name": "IMAGE_FONT1_84",
+                    "storageFormat": "png",
+                    "targetPlatforms": [
+                        "basalt",
+                        "chalk",
+                        "diorite"
+                    ],
+                    "type": "bitmap"
+                },
+                {
+                    "file": "images/tiles-83.png",
+                    "name": "IMAGE_FONT1_83",
+                    "storageFormat": "png",
+                    "targetPlatforms": [
+                        "basalt",
+                        "chalk",
+                        "diorite"
+                    ],
+                    "type": "bitmap"
+                },
+                {
+                    "file": "images/tiles-82.png",
+                    "name": "IMAGE_FONT1_82",
+                    "storageFormat": "png",
+                    "targetPlatforms": [
+                        "basalt",
+                        "chalk",
+                        "diorite"
+                    ],
+                    "type": "bitmap"
+                },
+                {
+                    "file": "images/tiles-81.png",
+                    "name": "IMAGE_FONT1_81",
+                    "storageFormat": "png",
+                    "targetPlatforms": [
+                        "basalt",
+                        "chalk",
+                        "diorite"
+                    ],
+                    "type": "bitmap"
+                },
+                {
+                    "file": "images/tiles-80.png",
+                    "name": "IMAGE_FONT1_80",
+                    "storageFormat": "png",
+                    "targetPlatforms": [
+                        "basalt",
+                        "chalk",
+                        "diorite"
+                    ],
+                    "type": "bitmap"
+                },
+                {
+                    "file": "images/tiles-8.png",
+                    "name": "IMAGE_FONT1_8",
+                    "storageFormat": "png",
+                    "targetPlatforms": [
+                        "basalt",
+                        "chalk",
+                        "diorite"
+                    ],
+                    "type": "bitmap"
+                },
+                {
+                    "file": "images/tiles-79.png",
+                    "name": "IMAGE_FONT1_79",
+                    "storageFormat": "png",
+                    "targetPlatforms": [
+                        "basalt",
+                        "chalk",
+                        "diorite"
+                    ],
+                    "type": "bitmap"
+                },
+                {
+                    "file": "images/tiles-78.png",
+                    "name": "IMAGE_FONT1_78",
+                    "storageFormat": "png",
+                    "targetPlatforms": [
+                        "basalt",
+                        "chalk",
+                        "diorite"
+                    ],
+                    "type": "bitmap"
+                },
+                {
+                    "file": "images/tiles-77.png",
+                    "name": "IMAGE_FONT1_77",
+                    "storageFormat": "png",
+                    "targetPlatforms": [
+                        "basalt",
+                        "chalk",
+                        "diorite"
+                    ],
+                    "type": "bitmap"
+                },
+                {
+                    "file": "images/tiles-76.png",
+                    "name": "IMAGE_FONT1_76",
+                    "storageFormat": "png",
+                    "targetPlatforms": [
+                        "basalt",
+                        "chalk",
+                        "diorite"
+                    ],
+                    "type": "bitmap"
+                },
+                {
+                    "file": "images/tiles-75.png",
+                    "name": "IMAGE_FONT1_75",
+                    "storageFormat": "png",
+                    "targetPlatforms": [
+                        "basalt",
+                        "chalk",
+                        "diorite"
+                    ],
+                    "type": "bitmap"
+                },
+                {
+                    "file": "images/tiles-7.png",
+                    "name": "IMAGE_FONT1_7",
+                    "storageFormat": "png",
+                    "targetPlatforms": [
+                        "basalt",
+                        "chalk",
+                        "diorite"
+                    ],
+                    "type": "bitmap"
+                },
+                {
+                    "file": "images/tiles-62.png",
+                    "name": "IMAGE_FONT1_62",
+                    "storageFormat": "png",
+                    "targetPlatforms": [
+                        "basalt",
+                        "chalk",
+                        "diorite"
+                    ],
+                    "type": "bitmap"
+                },
+                {
+                    "file": "images/tiles-61.png",
+                    "name": "IMAGE_FONT1_61",
+                    "storageFormat": "png",
+                    "targetPlatforms": [
+                        "basalt",
+                        "chalk",
+                        "diorite"
+                    ],
+                    "type": "bitmap"
+                },
+                {
+                    "file": "images/tiles-60.png",
+                    "name": "IMAGE_FONT1_60",
+                    "storageFormat": "png",
+                    "targetPlatforms": [
+                        "basalt",
+                        "chalk",
+                        "diorite"
+                    ],
+                    "type": "bitmap"
+                },
+                {
+                    "file": "images/tiles-6.png",
+                    "name": "IMAGE_FONT1_6",
+                    "storageFormat": "png",
+                    "targetPlatforms": [
+                        "basalt",
+                        "chalk",
+                        "diorite"
+                    ],
+                    "type": "bitmap"
+                },
+                {
+                    "file": "images/tiles-59.png",
+                    "name": "IMAGE_FONT1_59",
+                    "storageFormat": "png",
+                    "targetPlatforms": [
+                        "basalt",
+                        "chalk",
+                        "diorite"
+                    ],
+                    "type": "bitmap"
+                },
+                {
+                    "file": "images/tiles-58.png",
+                    "name": "IMAGE_FONT1_58",
+                    "storageFormat": "png",
+                    "targetPlatforms": [
+                        "basalt",
+                        "chalk",
+                        "diorite"
+                    ],
+                    "type": "bitmap"
+                },
+                {
+                    "file": "images/tiles-57.png",
+                    "name": "IMAGE_FONT1_57",
+                    "storageFormat": "png",
+                    "targetPlatforms": [
+                        "basalt",
+                        "chalk",
+                        "diorite"
+                    ],
+                    "type": "bitmap"
+                },
+                {
+                    "file": "images/tiles-56.png",
+                    "name": "IMAGE_FONT1_56",
+                    "storageFormat": "png",
+                    "targetPlatforms": [
+                        "basalt",
+                        "chalk",
+                        "diorite"
+                    ],
+                    "type": "bitmap"
+                },
+                {
+                    "file": "images/tiles-55.png",
+                    "name": "IMAGE_FONT1_55",
+                    "storageFormat": "png",
+                    "targetPlatforms": [
+                        "basalt",
+                        "chalk",
+                        "diorite"
+                    ],
+                    "type": "bitmap"
+                },
+                {
+                    "file": "images/tiles-54.png",
+                    "name": "IMAGE_FONT1_54",
+                    "storageFormat": "png",
+                    "targetPlatforms": [
+                        "basalt",
+                        "chalk",
+                        "diorite"
+                    ],
+                    "type": "bitmap"
+                },
+                {
+                    "file": "images/tiles-53.png",
+                    "name": "IMAGE_FONT1_53",
+                    "storageFormat": "png",
+                    "targetPlatforms": [
+                        "basalt",
+                        "chalk",
+                        "diorite"
+                    ],
+                    "type": "bitmap"
+                },
+                {
+                    "file": "images/tiles-52.png",
+                    "name": "IMAGE_FONT1_52",
+                    "storageFormat": "png",
+                    "targetPlatforms": [
+                        "basalt",
+                        "chalk",
+                        "diorite"
+                    ],
+                    "type": "bitmap"
+                },
+                {
+                    "file": "images/tiles-51.png",
+                    "name": "IMAGE_FONT1_51",
+                    "storageFormat": "png",
+                    "targetPlatforms": [
+                        "basalt",
+                        "chalk",
+                        "diorite"
+                    ],
+                    "type": "bitmap"
+                },
+                {
+                    "file": "images/tiles-50.png",
+                    "name": "IMAGE_FONT1_50",
+                    "storageFormat": "png",
+                    "targetPlatforms": [
+                        "basalt",
+                        "chalk",
+                        "diorite"
+                    ],
+                    "type": "bitmap"
+                },
+                {
+                    "file": "images/tiles-5.png",
+                    "name": "IMAGE_FONT1_5",
+                    "storageFormat": "png",
+                    "targetPlatforms": [
+                        "basalt",
+                        "chalk",
+                        "diorite"
+                    ],
+                    "type": "bitmap"
+                },
+                {
+                    "file": "images/tiles-4.png",
+                    "name": "IMAGE_FONT1_4",
+                    "storageFormat": "png",
+                    "targetPlatforms": [
+                        "basalt",
+                        "chalk",
+                        "diorite"
+                    ],
+                    "type": "bitmap"
+                },
+                {
+                    "file": "images/tiles-3.png",
+                    "name": "IMAGE_FONT1_3",
+                    "storageFormat": "png",
+                    "targetPlatforms": [
+                        "basalt",
+                        "chalk",
+                        "diorite"
+                    ],
+                    "type": "bitmap"
+                },
+                {
+                    "file": "images/tiles-2.png",
+                    "name": "IMAGE_FONT1_2",
+                    "storageFormat": "png",
+                    "targetPlatforms": [
+                        "basalt",
+                        "chalk",
+                        "diorite"
+                    ],
+                    "type": "bitmap"
+                },
+                {
+                    "file": "images/tiles-18.png",
+                    "name": "IMAGE_FONT1_18",
+                    "storageFormat": "png",
+                    "targetPlatforms": [
+                        "basalt",
+                        "chalk",
+                        "diorite"
+                    ],
+                    "type": "bitmap"
+                },
+                {
+                    "file": "images/tiles-17.png",
+                    "name": "IMAGE_FONT1_17",
+                    "storageFormat": "png",
+                    "targetPlatforms": [
+                        "basalt",
+                        "chalk",
+                        "diorite"
+                    ],
+                    "type": "bitmap"
+                },
+                {
+                    "file": "images/tiles-15.png",
+                    "name": "IMAGE_FONT1_15",
+                    "storageFormat": "png",
+                    "targetPlatforms": [
+                        "basalt",
+                        "chalk",
+                        "diorite"
+                    ],
+                    "type": "bitmap"
+                },
+                {
+                    "file": "images/tiles-13.png",
+                    "name": "IMAGE_FONT1_13",
+                    "storageFormat": "png",
+                    "targetPlatforms": [
+                        "basalt",
+                        "chalk",
+                        "diorite"
+                    ],
+                    "type": "bitmap"
+                },
+                {
+                    "file": "images/tiles-12.png",
+                    "name": "IMAGE_FONT1_12",
+                    "storageFormat": "png",
+                    "targetPlatforms": [
+                        "basalt",
+                        "chalk",
+                        "diorite"
+                    ],
+                    "type": "bitmap"
+                },
+                {
+                    "file": "images/tiles-117.png",
+                    "name": "IMAGE_FONT1_117",
+                    "storageFormat": "png",
+                    "targetPlatforms": [
+                        "basalt",
+                        "chalk",
+                        "diorite"
+                    ],
+                    "type": "bitmap"
+                },
+                {
+                    "file": "images/tiles-116.png",
+                    "name": "IMAGE_FONT1_116",
+                    "storageFormat": "png",
+                    "targetPlatforms": [
+                        "basalt",
+                        "chalk",
+                        "diorite"
+                    ],
+                    "type": "bitmap"
+                },
+                {
+                    "file": "images/tiles-115.png",
+                    "name": "IMAGE_FONT1_115",
+                    "storageFormat": "png",
+                    "targetPlatforms": [
+                        "basalt",
+                        "chalk",
+                        "diorite"
+                    ],
+                    "type": "bitmap"
+                },
+                {
+                    "file": "images/tiles-114.png",
+                    "name": "IMAGE_FONT1_114",
+                    "storageFormat": "png",
+                    "targetPlatforms": [
+                        "basalt",
+                        "chalk",
+                        "diorite"
+                    ],
+                    "type": "bitmap"
+                },
+                {
+                    "file": "images/tiles-113.png",
+                    "name": "IMAGE_FONT1_113",
+                    "storageFormat": "png",
+                    "targetPlatforms": [
+                        "basalt",
+                        "chalk",
+                        "diorite"
+                    ],
+                    "type": "bitmap"
+                },
+                {
+                    "file": "images/tiles-112.png",
+                    "name": "IMAGE_FONT1_112",
+                    "storageFormat": "png",
+                    "targetPlatforms": [
+                        "basalt",
+                        "chalk",
+                        "diorite"
+                    ],
+                    "type": "bitmap"
+                },
+                {
+                    "file": "images/tiles-111.png",
+                    "name": "IMAGE_FONT1_111",
+                    "storageFormat": "png",
+                    "targetPlatforms": [
+                        "basalt",
+                        "chalk",
+                        "diorite"
+                    ],
+                    "type": "bitmap"
+                },
+                {
+                    "file": "images/tiles-110.png",
+                    "name": "IMAGE_FONT1_110",
+                    "storageFormat": "png",
+                    "targetPlatforms": [
+                        "basalt",
+                        "chalk",
+                        "diorite"
+                    ],
+                    "type": "bitmap"
+                },
+                {
+                    "file": "images/tiles-11.png",
+                    "name": "IMAGE_FONT1_11",
+                    "storageFormat": "png",
+                    "targetPlatforms": [
+                        "basalt",
+                        "chalk",
+                        "diorite"
+                    ],
+                    "type": "bitmap"
+                },
+                {
+                    "file": "images/tiles-109.png",
+                    "name": "IMAGE_FONT1_109",
+                    "storageFormat": "png",
+                    "targetPlatforms": [
+                        "basalt",
+                        "chalk",
+                        "diorite"
+                    ],
+                    "type": "bitmap"
+                },
+                {
+                    "file": "images/tiles-108.png",
+                    "name": "IMAGE_FONT1_108",
+                    "storageFormat": "png",
+                    "targetPlatforms": [
+                        "basalt",
+                        "chalk",
+                        "diorite"
+                    ],
+                    "type": "bitmap"
+                },
+                {
+                    "file": "images/tiles-107.png",
+                    "name": "IMAGE_FONT1_107",
+                    "storageFormat": "png",
+                    "targetPlatforms": [
+                        "basalt",
+                        "chalk",
+                        "diorite"
+                    ],
+                    "type": "bitmap"
+                },
+                {
+                    "file": "images/tiles-106.png",
+                    "name": "IMAGE_FONT1_106",
+                    "storageFormat": "png",
+                    "targetPlatforms": [
+                        "basalt",
+                        "chalk",
+                        "diorite"
+                    ],
+                    "type": "bitmap"
+                },
+                {
+                    "file": "images/tiles-105.png",
+                    "name": "IMAGE_FONT1_105",
+                    "storageFormat": "png",
+                    "targetPlatforms": [
+                        "basalt",
+                        "chalk",
+                        "diorite"
+                    ],
+                    "type": "bitmap"
+                },
+                {
+                    "file": "images/tiles-104.png",
+                    "name": "IMAGE_FONT1_104",
+                    "storageFormat": "png",
+                    "targetPlatforms": [
+                        "basalt",
+                        "chalk",
+                        "diorite"
+                    ],
+                    "type": "bitmap"
+                },
+                {
+                    "file": "images/tiles-103.png",
+                    "name": "IMAGE_FONT1_103",
+                    "storageFormat": "png",
+                    "targetPlatforms": [
+                        "basalt",
+                        "chalk",
+                        "diorite"
+                    ],
+                    "type": "bitmap"
+                },
+                {
+                    "file": "images/tiles-102.png",
+                    "name": "IMAGE_FONT1_102",
+                    "storageFormat": "png",
+                    "targetPlatforms": [
+                        "basalt",
+                        "chalk",
+                        "diorite"
+                    ],
+                    "type": "bitmap"
+                },
+                {
+                    "file": "images/tiles-101.png",
+                    "name": "IMAGE_FONT1_101",
+                    "storageFormat": "png",
+                    "targetPlatforms": [
+                        "basalt",
+                        "chalk",
+                        "diorite"
+                    ],
+                    "type": "bitmap"
+                },
+                {
+                    "file": "images/tiles-100.png",
+                    "name": "IMAGE_FONT1_100",
+                    "storageFormat": "png",
+                    "targetPlatforms": [
+                        "basalt",
+                        "chalk",
+                        "diorite"
+                    ],
+                    "type": "bitmap"
+                },
+                {
+                    "file": "images/tiles-10.png",
+                    "name": "IMAGE_FONT1_10",
+                    "storageFormat": "png",
+                    "targetPlatforms": [
+                        "basalt",
+                        "chalk",
+                        "diorite"
+                    ],
+                    "type": "bitmap"
+                },
+                {
+                    "file": "images/tiles-1.png",
+                    "name": "IMAGE_FONT1_1",
+                    "storageFormat": "png",
+                    "targetPlatforms": [
+                        "basalt",
+                        "chalk",
+                        "diorite"
+                    ],
+                    "type": "bitmap"
+                },
+                {
+                    "file": "images/tiles-0.png",
+                    "name": "IMAGE_FONT1_0",
+                    "storageFormat": "png",
+                    "targetPlatforms": [
+                        "basalt",
+                        "chalk",
+                        "diorite"
+                    ],
+                    "type": "bitmap"
+                },
+                {
+                    "file": "images/bg1.png",
+                    "name": "IMAGE_BG_1",
+                    "storageFormat": "png",
+                    "targetPlatforms": [
+                        "basalt",
+                        "chalk",
+                        "diorite"
+                    ],
+                    "type": "bitmap"
+                },
+                {
+                    "file": "images/bar2.png",
+                    "name": "IMAGE_BAR_EMPTY",
+                    "storageFormat": "png",
+                    "targetPlatforms": [
+                        "basalt",
+                        "chalk",
+                        "diorite"
+                    ],
+                    "type": "bitmap"
+                },
+                {
+                    "file": "images/bar1.png",
+                    "name": "IMAGE_BAR_FULL",
+                    "storageFormat": "png",
+                    "targetPlatforms": [
+                        "basalt",
+                        "chalk",
+                        "diorite"
+                    ],
+                    "type": "bitmap"
+                },
+                {
+                    "file": "images/90.png",
+                    "name": "IMAGE_BATTERY_90",
+                    "storageFormat": "png",
+                    "targetPlatforms": [
+                        "basalt",
+                        "chalk",
+                        "diorite"
+                    ],
+                    "type": "bitmap"
+                },
+                {
+                    "file": "images/80.png",
+                    "name": "IMAGE_BATTERY_80",
+                    "storageFormat": "png",
+                    "targetPlatforms": [
+                        "basalt",
+                        "chalk",
+                        "diorite"
+                    ],
+                    "type": "bitmap"
+                },
+                {
+                    "file": "images/70.png",
+                    "name": "IMAGE_BATTERY_70",
+                    "storageFormat": "png",
+                    "targetPlatforms": [
+                        "basalt",
+                        "chalk",
+                        "diorite"
+                    ],
+                    "type": "bitmap"
+                },
+                {
+                    "file": "images/60.png",
+                    "name": "IMAGE_BATTERY_60",
+                    "storageFormat": "png",
+                    "targetPlatforms": [
+                        "basalt",
+                        "chalk",
+                        "diorite"
+                    ],
+                    "type": "bitmap"
+                },
+                {
+                    "file": "images/50.png",
+                    "name": "IMAGE_BATTERY_50",
+                    "storageFormat": "png",
+                    "targetPlatforms": [
+                        "basalt",
+                        "chalk",
+                        "diorite"
+                    ],
+                    "type": "bitmap"
+                },
+                {
+                    "file": "images/40.png",
+                    "name": "IMAGE_BATTERY_40",
+                    "storageFormat": "png",
+                    "targetPlatforms": [
+                        "basalt",
+                        "chalk",
+                        "diorite"
+                    ],
+                    "type": "bitmap"
+                },
+                {
+                    "file": "images/30.png",
+                    "name": "IMAGE_BATTERY_30",
+                    "storageFormat": "png",
+                    "targetPlatforms": [
+                        "basalt",
+                        "chalk",
+                        "diorite"
+                    ],
+                    "type": "bitmap"
+                },
+                {
+                    "file": "images/20.png",
+                    "name": "IMAGE_BATTERY_20",
+                    "storageFormat": "png",
+                    "targetPlatforms": [
+                        "basalt",
+                        "chalk",
+                        "diorite"
+                    ],
+                    "type": "bitmap"
+                },
+                {
+                    "file": "images/100.png",
+                    "name": "IMAGE_BATTERY_100",
+                    "storageFormat": "png",
+                    "targetPlatforms": [
+                        "basalt",
+                        "chalk",
+                        "diorite"
+                    ],
+                    "type": "bitmap"
+                },
+                {
+                    "file": "images/10.png",
+                    "name": "IMAGE_BATTERY_10",
+                    "storageFormat": "png",
+                    "targetPlatforms": [
+                        "basalt",
+                        "chalk",
+                        "diorite"
+                    ],
+                    "type": "bitmap"
+                }
+            ]
+        },
+        "sdkVersion": "3",
+        "targetPlatforms": [
+            "basalt",
+            "chalk",
+            "diorite"
+        ],
+        "uuid": "027e5574-f659-4c37-b71c-9c47ac8f9d9f",
+        "watchapp": {
+            "watchface": true
         }
-
-      ]
     },
-    "sdkVersion": "3",
-    "targetPlatforms": [
-      "basalt",
-      "chalk",
-      "diorite"
-    ],
-    "uuid": "027e5574-f659-4c37-b71c-9c47ac8f9d9f",
-    "watchapp": {
-      "watchface": true
-    }
-  },
-  "version": "1.0.0"
+    "version": "1.0.0"
 }
