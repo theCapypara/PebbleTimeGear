@@ -971,7 +971,7 @@
 
       ]
     },
-    "sdkVersion": "4",
+    "sdkVersion": "3",
     "targetPlatforms": [
       "basalt",
       "chalk",
