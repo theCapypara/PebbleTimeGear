@@ -1,9 +1,12 @@
 {
-    "author": "marco@4koepcke.de",
+    "author": "Parakoopa",
     "dependencies": {},
     "keywords": [],
     "name": "time-gear",
     "pebble": {
+        "capabilities": [
+            "health"
+        ],
         "displayName": "Time Gear",
         "enableMultiJS": false,
         "messageKeys": [],
@@ -11,8 +14,14 @@
         "resources": {
             "media": [
                 {
-                    "file": "images/tb_l.png",
-                    "name": "IMAGE_TEXTBOX_L",
+                    "file": "images/timegear_chrg",
+                    "name": "IMAGE_TIMEGEAR_CHARGING",
+                    "targetPlatforms": null,
+                    "type": "bitmap"
+                },
+                {
+                    "file": "images/bar3.png",
+                    "name": "IMAGE_BAR_FULL2",
                     "targetPlatforms": [
                         "basalt",
                         "chalk",
@@ -21,8 +30,8 @@
                     "type": "bitmap"
                 },
                 {
-                    "file": "images/tb_r.png",
-                    "name": "IMAGE_TEXTBOX_R",
+                    "file": "images/bg3.png",
+                    "name": "IMAGE_BG_3",
                     "targetPlatforms": [
                         "basalt",
                         "chalk",
@@ -31,107 +40,28 @@
                     "type": "bitmap"
                 },
                 {
-                    "characterRegex": "[0-9:]",
-                    "file": "fonts/PMD_1.1.ttf",
-                    "name": "FONT_PMD_21",
+                    "file": "images/bg2.png",
+                    "name": "IMAGE_BG_2",
                     "targetPlatforms": [
                         "basalt",
                         "chalk",
                         "diorite"
                     ],
-                    "type": "font"
+                    "type": "bitmap"
                 },
                 {
-                    "characterRegex": "[0-9a-zA-Z,.-;:_()?!'\u00f6\u00fc\u00e4\u00df\u00e9\u00e1\u00ed]",
-                    "file": "fonts/PMD_1.1.ttf",
-                    "name": "FONT_PMD_11",
+                    "file": "images/0.png",
+                    "name": "IMAGE_BATTERY_0",
                     "targetPlatforms": [
                         "basalt",
                         "chalk",
                         "diorite"
                     ],
-                    "type": "font"
+                    "type": "bitmap"
                 },
                 {
                     "file": "images/timegear_main.png",
                     "name": "IMAGE_TIMEGEAR",
-                    "storageFormat": "png",
-                    "targetPlatforms": [
-                        "basalt",
-                        "chalk",
-                        "diorite"
-                    ],
-                    "type": "bitmap"
-                },
-                {
-                    "file": "images/tb_tr.png",
-                    "name": "IMAGE_TEXTBOX_TR",
-                    "storageFormat": "png",
-                    "targetPlatforms": [
-                        "basalt",
-                        "chalk",
-                        "diorite"
-                    ],
-                    "type": "bitmap"
-                },
-                {
-                    "file": "images/tb_tl.png",
-                    "name": "IMAGE_TEXTBOX_TL",
-                    "storageFormat": "png",
-                    "targetPlatforms": [
-                        "basalt",
-                        "chalk",
-                        "diorite"
-                    ],
-                    "type": "bitmap"
-                },
-                {
-                    "file": "images/tb_t.png",
-                    "name": "IMAGE_TEXTBOX_T",
-                    "storageFormat": "png",
-                    "targetPlatforms": [
-                        "basalt",
-                        "chalk",
-                        "diorite"
-                    ],
-                    "type": "bitmap"
-                },
-                {
-                    "file": "images/tb_br.png",
-                    "name": "IMAGE_TEXTBOX_BR",
-                    "storageFormat": "png",
-                    "targetPlatforms": [
-                        "basalt",
-                        "chalk",
-                        "diorite"
-                    ],
-                    "type": "bitmap"
-                },
-                {
-                    "file": "images/tb_bl.png",
-                    "name": "IMAGE_TEXTBOX_BL",
-                    "storageFormat": "png",
-                    "targetPlatforms": [
-                        "basalt",
-                        "chalk",
-                        "diorite"
-                    ],
-                    "type": "bitmap"
-                },
-                {
-                    "file": "images/tb_b.png",
-                    "name": "IMAGE_TEXTBOX_B",
-                    "storageFormat": "png",
-                    "targetPlatforms": [
-                        "basalt",
-                        "chalk",
-                        "diorite"
-                    ],
-                    "type": "bitmap"
-                },
-                {
-                    "file": "images/no-bluetooth.png",
-                    "name": "IMAGE_NO_BLUETOOTH",
                     "storageFormat": "png",
                     "targetPlatforms": [
                         "basalt",
@@ -812,6 +742,103 @@
                     "type": "bitmap"
                 },
                 {
+                    "file": "images/tb_tr.png",
+                    "name": "IMAGE_TEXTBOX_TR",
+                    "storageFormat": "png",
+                    "targetPlatforms": [
+                        "basalt",
+                        "chalk",
+                        "diorite"
+                    ],
+                    "type": "bitmap"
+                },
+                {
+                    "file": "images/tb_tl.png",
+                    "name": "IMAGE_TEXTBOX_TL",
+                    "storageFormat": "png",
+                    "targetPlatforms": [
+                        "basalt",
+                        "chalk",
+                        "diorite"
+                    ],
+                    "type": "bitmap"
+                },
+                {
+                    "file": "images/tb_t.png",
+                    "name": "IMAGE_TEXTBOX_T",
+                    "storageFormat": "png",
+                    "targetPlatforms": [
+                        "basalt",
+                        "chalk",
+                        "diorite"
+                    ],
+                    "type": "bitmap"
+                },
+                {
+                    "file": "images/tb_r.png",
+                    "name": "IMAGE_TEXTBOX_R",
+                    "targetPlatforms": [
+                        "basalt",
+                        "chalk",
+                        "diorite"
+                    ],
+                    "type": "bitmap"
+                },
+                {
+                    "file": "images/tb_l.png",
+                    "name": "IMAGE_TEXTBOX_L",
+                    "targetPlatforms": [
+                        "basalt",
+                        "chalk",
+                        "diorite"
+                    ],
+                    "type": "bitmap"
+                },
+                {
+                    "file": "images/tb_br.png",
+                    "name": "IMAGE_TEXTBOX_BR",
+                    "storageFormat": "png",
+                    "targetPlatforms": [
+                        "basalt",
+                        "chalk",
+                        "diorite"
+                    ],
+                    "type": "bitmap"
+                },
+                {
+                    "file": "images/tb_bl.png",
+                    "name": "IMAGE_TEXTBOX_BL",
+                    "storageFormat": "png",
+                    "targetPlatforms": [
+                        "basalt",
+                        "chalk",
+                        "diorite"
+                    ],
+                    "type": "bitmap"
+                },
+                {
+                    "file": "images/tb_b.png",
+                    "name": "IMAGE_TEXTBOX_B",
+                    "storageFormat": "png",
+                    "targetPlatforms": [
+                        "basalt",
+                        "chalk",
+                        "diorite"
+                    ],
+                    "type": "bitmap"
+                },
+                {
+                    "file": "images/no-bluetooth.png",
+                    "name": "IMAGE_NO_BLUETOOTH",
+                    "storageFormat": "png",
+                    "targetPlatforms": [
+                        "basalt",
+                        "chalk",
+                        "diorite"
+                    ],
+                    "type": "bitmap"
+                },
+                {
                     "file": "images/bg1.png",
                     "name": "IMAGE_BG_1",
                     "storageFormat": "png",
@@ -953,6 +980,28 @@
                         "diorite"
                     ],
                     "type": "bitmap"
+                },
+                {
+                    "characterRegex": "[0-9a-zA-Z,.-;:_()?!'\u00f6\u00fc\u00e4\u00df\u00e9\u00e1\u00ed]",
+                    "file": "fonts/PMD_1.1.ttf",
+                    "name": "FONT_PMD_11",
+                    "targetPlatforms": [
+                        "basalt",
+                        "chalk",
+                        "diorite"
+                    ],
+                    "type": "font"
+                },
+                {
+                    "characterRegex": "[0-9:]",
+                    "file": "fonts/PMD_1.1.ttf",
+                    "name": "FONT_PMD_21",
+                    "targetPlatforms": [
+                        "basalt",
+                        "chalk",
+                        "diorite"
+                    ],
+                    "type": "font"
                 }
             ]
         },

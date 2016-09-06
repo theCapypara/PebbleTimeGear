@@ -1,28 +1,46 @@
 #include <pebble.h>
 #include "background.h"
 #include "time.h"
+#include "timegear.h"
+#include "steps.h"
 
 Window *s_main_window;
-static GBitmap *s_bitmap;
-static BitmapLayer *s_bitmap_layer;
-static TextLayer *s_text_layer;
-static Layer *debug_layer;
-static GFont font;
 
 /** **/
 static void main_window_load(Window *window) {
   tg_bg_add(window);
+  tg_timegear_add(window);
   tg_time_add(window);
+  tg_steps_add(window);
+  
   tg_time_update();
+  tg_steps_update_health();
+  tg_timegear_update_battery(battery_state_service_peek());
+  tg_timegear_update_connection(connection_service_peek_pebble_app_connection());
 }
 
 static void main_window_unload(Window *window) {
-  tg_bg_remove(window);
-  tg_time_remove(window);
+  tg_bg_remove();
+  tg_time_remove();
+  tg_timegear_remove();
+  tg_steps_remove();
 }
 
 static void tick_handler(struct tm *tick_time, TimeUnits units_changed) {
   tg_time_update();
+  tg_steps_update_health();
+}
+
+static void battery_handler(BatteryChargeState charge) {
+  tg_timegear_update_battery(charge);
+}
+
+static void app_connection_handler(bool connected) {
+  APP_LOG(APP_LOG_LEVEL_INFO, "Pebble app %sconnected", connected ? "" : "dis");
+  if (!connected) {
+    vibes_double_pulse();
+  }
+  tg_timegear_update_connection(connected);
 }
 
 static void init() {
@@ -37,6 +55,14 @@ static void init() {
   
   // Register with TickTimerService
   tick_timer_service_subscribe(MINUTE_UNIT, tick_handler);
+  
+  // Register Battery
+  battery_state_service_subscribe(battery_handler);
+  
+  // Register connection
+  connection_service_subscribe((ConnectionHandlers) {
+    .pebble_app_connection_handler = app_connection_handler
+  });
 
   // Show the Window on the watch, with animated=true
   window_stack_push(s_main_window, true);

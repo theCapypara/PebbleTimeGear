@@ -2,6 +2,8 @@
 #include "textbox.h"
 
 void tg_textbox_layer_update_proc(Layer *layer, GContext *ctx) {
+  APP_LOG(APP_LOG_LEVEL_DEBUG, "Redrawing a textbox");
+  
   Textbox *textbox = layer_get_data(layer);
   // Draw textbox
   
