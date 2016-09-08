@@ -61,10 +61,9 @@ static void main_window_unload(Window *window) {
 static void tick_handler(struct tm *tick_time, TimeUnits units_changed) {
   tg_time_update();
   tg_steps_update_health();
-}
-
-static void day_handler(struct tm *tick_time, TimeUnits units_changed) {
-  tg_date_update();
+  if (units_changed & DAY_UNIT) {
+    tg_date_update();
+  }
 }
 
 static void battery_handler(BatteryChargeState charge) {
@@ -83,7 +82,6 @@ static void init() {
   
   // Register with TickTimerService
   tick_timer_service_subscribe(MINUTE_UNIT, tick_handler);
-  tick_timer_service_subscribe(DAY_UNIT, day_handler);
   
   // Register Battery
   battery_state_service_subscribe(battery_handler);
