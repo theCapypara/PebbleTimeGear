@@ -14,44 +14,14 @@
         "resources": {
             "media": [
                 {
-                    "file": "images/timegear_chrg",
-                    "name": "IMAGE_TIMEGEAR_CHARGING",
+                    "file": "images/test1.png",
+                    "name": "IMAGE_TEST_1",
                     "targetPlatforms": null,
                     "type": "bitmap"
                 },
                 {
-                    "file": "images/bar3.png",
-                    "name": "IMAGE_BAR_FULL2",
-                    "targetPlatforms": [
-                        "basalt",
-                        "chalk",
-                        "diorite"
-                    ],
-                    "type": "bitmap"
-                },
-                {
-                    "file": "images/bg3.png",
-                    "name": "IMAGE_BG_3",
-                    "targetPlatforms": [
-                        "basalt",
-                        "chalk",
-                        "diorite"
-                    ],
-                    "type": "bitmap"
-                },
-                {
-                    "file": "images/bg2.png",
-                    "name": "IMAGE_BG_2",
-                    "targetPlatforms": [
-                        "basalt",
-                        "chalk",
-                        "diorite"
-                    ],
-                    "type": "bitmap"
-                },
-                {
-                    "file": "images/0.png",
-                    "name": "IMAGE_BATTERY_0",
+                    "file": "images/font2.png",
+                    "name": "IMAGE_SHEET_HUD",
                     "targetPlatforms": [
                         "basalt",
                         "chalk",
@@ -68,6 +38,12 @@
                         "chalk",
                         "diorite"
                     ],
+                    "type": "bitmap"
+                },
+                {
+                    "file": "images/timegear_chrg",
+                    "name": "IMAGE_TIMEGEAR_CHARGING",
+                    "targetPlatforms": null,
                     "type": "bitmap"
                 },
                 {
@@ -168,9 +144,39 @@
                     "type": "bitmap"
                 },
                 {
+                    "file": "images/bg3.png",
+                    "name": "IMAGE_BG_3",
+                    "targetPlatforms": [
+                        "basalt",
+                        "chalk",
+                        "diorite"
+                    ],
+                    "type": "bitmap"
+                },
+                {
+                    "file": "images/bg2.png",
+                    "name": "IMAGE_BG_2",
+                    "targetPlatforms": [
+                        "basalt",
+                        "chalk",
+                        "diorite"
+                    ],
+                    "type": "bitmap"
+                },
+                {
                     "file": "images/bg1.png",
                     "name": "IMAGE_BG_1",
                     "storageFormat": "png",
+                    "targetPlatforms": [
+                        "basalt",
+                        "chalk",
+                        "diorite"
+                    ],
+                    "type": "bitmap"
+                },
+                {
+                    "file": "images/bar3.png",
+                    "name": "IMAGE_BAR_FULL2",
                     "targetPlatforms": [
                         "basalt",
                         "chalk",
@@ -311,9 +317,19 @@
                     "type": "bitmap"
                 },
                 {
-                    "characterRegex": "[0-9a-zA-Z,.-;:_()?!'\u00f6\u00fc\u00e4\u00df\u00e9\u00e1\u00ed]",
+                    "file": "images/0.png",
+                    "name": "IMAGE_BATTERY_0",
+                    "targetPlatforms": [
+                        "basalt",
+                        "chalk",
+                        "diorite"
+                    ],
+                    "type": "bitmap"
+                },
+                {
+                    "characterRegex": "[0-9:]",
                     "file": "fonts/PMD_1.1.ttf",
-                    "name": "FONT_PMD_11",
+                    "name": "FONT_PMD_21",
                     "targetPlatforms": [
                         "basalt",
                         "chalk",
@@ -322,9 +338,9 @@
                     "type": "font"
                 },
                 {
-                    "characterRegex": "[0-9:]",
+                    "characterRegex": "[0-9a-zA-Z,.-;:_()?!'\u00f6\u00fc\u00e4\u00df\u00e9\u00e1\u00ed]",
                     "file": "fonts/PMD_1.1.ttf",
-                    "name": "FONT_PMD_21",
+                    "name": "FONT_PMD_11",
                     "targetPlatforms": [
                         "basalt",
                         "chalk",

@@ -13,7 +13,6 @@ void tg_bg_add(Window *window) {
   s_background = gbitmap_create_with_resource(RESOURCE_ID_IMAGE_BG_3);
   s_background_layer = bitmap_layer_create(main_bounds);
   
-  bitmap_layer_set_compositing_mode(s_background_layer, GCompOpSet);
   bitmap_layer_set_bitmap(s_background_layer, s_background);
 
   layer_add_child(window_layer, bitmap_layer_get_layer(s_background_layer));

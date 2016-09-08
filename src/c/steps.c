@@ -46,7 +46,7 @@ void tg_steps_update_proc(Layer *layer, GContext *ctx) {
 void tg_steps_add(Window * window) {
   Layer *window_layer = window_get_root_layer(window);
   
-  s_bar_layer = layer_create(GRect(34, 51, 77, 7));
+  s_bar_layer = layer_create(GRect(34, 57, 77, 7));
   layer_set_update_proc(s_bar_layer, tg_steps_update_proc);
   
   s_bar_empty = gbitmap_create_with_resource(RESOURCE_ID_IMAGE_BAR_EMPTY);

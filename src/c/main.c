@@ -1,39 +1,20 @@
 #include <pebble.h>
+#include "hudfont.h"
 #include "background.h"
 #include "time.h"
 #include "timegear.h"
 #include "steps.h"
+#include "date.h"
 
 Window *s_main_window;
 
-/** **/
-static void main_window_load(Window *window) {
-  tg_bg_add(window);
-  tg_timegear_add(window);
-  tg_time_add(window);
-  tg_steps_add(window);
-  
-  tg_time_update();
-  tg_steps_update_health();
-  tg_timegear_update_battery(battery_state_service_peek());
-  tg_timegear_update_connection(connection_service_peek_pebble_app_connection());
-}
-
-static void main_window_unload(Window *window) {
-  tg_bg_remove();
-  tg_time_remove();
-  tg_timegear_remove();
-  tg_steps_remove();
-}
-
-static void tick_handler(struct tm *tick_time, TimeUnits units_changed) {
-  tg_time_update();
-  tg_steps_update_health();
-}
-
-static void battery_handler(BatteryChargeState charge) {
-  tg_timegear_update_battery(charge);
-}
+// TEST
+//Layer *s_test_layer;
+//static void test_proc(Layer * layer, GContext *ctx) {
+//  graphics_context_set_compositing_mode(ctx, GCompOpSet);
+//  tg_hudfont_drawText(ctx, 0, 0, "-99C", 1);
+//  tg_hudfont_drawText(ctx, 66, 0, "99/99", 0);
+//}
 
 static void app_connection_handler(bool connected) {
   APP_LOG(APP_LOG_LEVEL_INFO, "Pebble app %sconnected", connected ? "" : "dis");
@@ -41,6 +22,53 @@ static void app_connection_handler(bool connected) {
     vibes_double_pulse();
   }
   tg_timegear_update_connection(connected);
+}
+
+/** **/
+static void main_window_load(Window *window) {
+  tg_hudfont_load();
+  tg_bg_add(window);
+  tg_timegear_add(window);
+  tg_time_add(window);
+  tg_date_add(window);
+  tg_steps_add(window);
+  
+  tg_time_update();
+  tg_date_update();
+  tg_steps_update_health();
+  tg_timegear_update_battery(battery_state_service_peek());
+  app_connection_handler(connection_service_peek_pebble_app_connection());
+  
+  // TEST
+//  s_test_layer = layer_create(GRect(1,4,200,50));
+//  layer_set_update_proc(s_test_layer, test_proc);
+//  layer_add_child(window_get_root_layer(window), s_test_layer);
+}
+
+static void main_window_unload(Window *window) {
+  tg_bg_remove();
+  tg_time_remove();
+  tg_date_remove();
+  tg_timegear_remove();
+  tg_steps_remove();
+  
+  tg_hudfont_free();
+  
+  // TEST
+//  layer_destroy(s_test_layer);
+}
+
+static void tick_handler(struct tm *tick_time, TimeUnits units_changed) {
+  tg_time_update();
+  tg_steps_update_health();
+}
+
+static void day_handler(struct tm *tick_time, TimeUnits units_changed) {
+  tg_date_update();
+}
+
+static void battery_handler(BatteryChargeState charge) {
+  tg_timegear_update_battery(charge);
 }
 
 static void init() {
@@ -55,6 +83,7 @@ static void init() {
   
   // Register with TickTimerService
   tick_timer_service_subscribe(MINUTE_UNIT, tick_handler);
+  tick_timer_service_subscribe(DAY_UNIT, day_handler);
   
   // Register Battery
   battery_state_service_subscribe(battery_handler);

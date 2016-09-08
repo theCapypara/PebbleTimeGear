@@ -10,7 +10,7 @@ void tg_time_add(Window *window) {
   Layer *window_layer = window_get_root_layer(window);
 
   // Create the TextLayer with specific bounds
-  s_time_layer = text_layer_create(GRect(28, 21, 89, 25));
+  s_time_layer = text_layer_create(GRect(28, 25, 89, 25));
 
   // Improve the layout to be more like a watchface  
   text_layer_set_text(s_time_layer, "00:00");
@@ -21,7 +21,7 @@ void tg_time_add(Window *window) {
   text_layer_set_text_alignment(s_time_layer, GTextAlignmentCenter);
   
   // TEXTBOX
-  s_textbox = tg_textbox_create(GRect(20, 19, 105, 31));
+  s_textbox = tg_textbox_create(GRect(20, 23, 105, 31));
   tg_textbox_set_transparent_bg(s_textbox, true);
 
   // Add it as a child layer to the Window's root layer
