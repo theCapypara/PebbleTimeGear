@@ -14,7 +14,7 @@ void tg_date_update_proc(Layer *layer, GContext *ctx) {
 void tg_date_add(Window *window) {
   Layer *window_layer = window_get_root_layer(window);
 
-  s_date_layer = layer_create(GRect(67, 4, 77, 16));
+  s_date_layer = layer_create(GRect(67, 3, 77, 16));
  
   layer_set_update_proc(s_date_layer, tg_date_update_proc);
   layer_add_child(window_layer, s_date_layer);

@@ -3,7 +3,7 @@
 #include "textbox.h"
 
 TextLayer *s_time_layer;
-Textbox *s_textbox;
+Textbox *s_textbox_time;
 
 void tg_time_add(Window *window) {
   // Get information about the Window
@@ -21,12 +21,12 @@ void tg_time_add(Window *window) {
   text_layer_set_text_alignment(s_time_layer, GTextAlignmentCenter);
   
   // TEXTBOX
-  s_textbox = tg_textbox_create(GRect(20, 23, 105, 31));
-  tg_textbox_set_transparent_bg(s_textbox, true);
+  s_textbox_time = tg_textbox_create(GRect(20, 23, 105, 31));
+  tg_textbox_set_transparent_bg(s_textbox_time, true);
 
   // Add it as a child layer to the Window's root layer
   layer_add_child(window_layer, text_layer_get_layer(s_time_layer));
-  layer_add_child(window_layer, tg_textbox_get_layer(s_textbox));
+  layer_add_child(window_layer, tg_textbox_get_layer(s_textbox_time));
 }
 
 void tg_time_update() {
@@ -46,4 +46,5 @@ void tg_time_update() {
 void tg_time_remove() {
   // Destroy TextLayer
   text_layer_destroy(s_time_layer);
+  tg_textbox_destroy(s_textbox_time);
 }

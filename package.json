@@ -8,8 +8,11 @@
             "health"
         ],
         "displayName": "Time Gear",
-        "enableMultiJS": false,
-        "messageKeys": [],
+        "enableMultiJS": true,
+        "messageKeys": [
+            "Temperature",
+            "WeatherDescription"
+        ],
         "projectType": "native",
         "resources": {
             "media": [
@@ -327,9 +330,9 @@
                     "type": "bitmap"
                 },
                 {
-                    "characterRegex": "[0-9:]",
+                    "characterRegex": "[0-9a-zA-Z,.-;:_()?!'\u00f6\u00fc\u00e4\u00df\u00e9\u00e1\u00ed ]",
                     "file": "fonts/PMD_1.1.ttf",
-                    "name": "FONT_PMD_21",
+                    "name": "FONT_PMD_11",
                     "targetPlatforms": [
                         "basalt",
                         "chalk",
@@ -338,9 +341,9 @@
                     "type": "font"
                 },
                 {
-                    "characterRegex": "[0-9a-zA-Z,.-;:_()?!'\u00f6\u00fc\u00e4\u00df\u00e9\u00e1\u00ed]",
+                    "characterRegex": "[0-9: ]",
                     "file": "fonts/PMD_1.1.ttf",
-                    "name": "FONT_PMD_11",
+                    "name": "FONT_PMD_21",
                     "targetPlatforms": [
                         "basalt",
                         "chalk",
@@ -352,9 +355,7 @@
         },
         "sdkVersion": "3",
         "targetPlatforms": [
-            "basalt",
-            "chalk",
-            "diorite"
+            "basalt"
         ],
         "uuid": "027e5574-f659-4c37-b71c-9c47ac8f9d9f",
         "watchapp": {

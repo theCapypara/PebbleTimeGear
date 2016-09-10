@@ -10,7 +10,7 @@ void tg_bg_add(Window *window) {
   
   GRect main_bounds = layer_get_bounds(window_layer);
   
-  s_background = gbitmap_create_with_resource(RESOURCE_ID_IMAGE_BG_3);
+  s_background = gbitmap_create_with_resource(RESOURCE_ID_IMAGE_BG_2);
   s_background_layer = bitmap_layer_create(main_bounds);
   
   bitmap_layer_set_bitmap(s_background_layer, s_background);

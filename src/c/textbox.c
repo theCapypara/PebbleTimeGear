@@ -23,9 +23,9 @@ void tg_textbox_layer_update_proc(Layer *layer, GContext *ctx) {
     graphics_context_set_fill_color(ctx, GColorBlack);
     graphics_fill_rect(ctx, 
                        GRect(tr_bounds.size.w, 
-                         tr_bounds.size.h, 
+                         t_bounds.size.h, 
                          original_bounds.size.w-tr_bounds.size.w-br_bounds.size.w,
-                         original_bounds.size.h-tr_bounds.size.h-br_bounds.size.h
+                         original_bounds.size.h-t_bounds.size.h-b_bounds.size.h
                        ), 0, GCornersAll
     );
   }
@@ -46,29 +46,32 @@ void tg_textbox_layer_update_proc(Layer *layer, GContext *ctx) {
     tr_bounds.size.w,
     tr_bounds.size.h
   ));
-  graphics_draw_bitmap_in_rect(ctx, textbox->img_bl, GRect(
-    0,
-    original_bounds.size.h-tl_bounds.size.h,
-    bl_bounds.size.w,
-    bl_bounds.size.h
-  ));
-  graphics_draw_bitmap_in_rect(ctx, textbox->img_br, GRect(
-    original_bounds.size.w-tl_bounds.size.w,
-    original_bounds.size.h-tl_bounds.size.h,
-    br_bounds.size.w,
-    br_bounds.size.h
-  ));
+  // Hide bottom decoration?
+  if (!textbox->hide_bottom_decoration) {
+    graphics_draw_bitmap_in_rect(ctx, textbox->img_bl, GRect(
+      0,
+      original_bounds.size.h-tl_bounds.size.h,
+      bl_bounds.size.w,
+      bl_bounds.size.h
+    ));
+    graphics_draw_bitmap_in_rect(ctx, textbox->img_br, GRect(
+      original_bounds.size.w-tl_bounds.size.w,
+      original_bounds.size.h-tl_bounds.size.h,
+      br_bounds.size.w,
+      br_bounds.size.h
+    ));
+    graphics_draw_bitmap_in_rect(ctx, textbox->img_b, GRect(
+      br_bounds.size.w,
+      original_bounds.size.h-b_bounds.size.h,
+      original_bounds.size.w-br_bounds.size.w-br_bounds.size.w,
+      b_bounds.size.h
+    ));
+  }
   graphics_draw_bitmap_in_rect(ctx, textbox->img_t, GRect(
     tl_bounds.size.w,
     0,
     original_bounds.size.w-tl_bounds.size.w-tr_bounds.size.w,
     t_bounds.size.h
-  ));
-  graphics_draw_bitmap_in_rect(ctx, textbox->img_b, GRect(
-    br_bounds.size.w,
-    original_bounds.size.h-b_bounds.size.h,
-    original_bounds.size.w-br_bounds.size.w-br_bounds.size.w,
-    b_bounds.size.h
   ));
   graphics_draw_bitmap_in_rect(ctx, textbox->img_l, GRect(
     0,
@@ -99,6 +102,7 @@ Textbox * tg_textbox_create(GRect bounds) {
   textbox->img_br = gbitmap_create_with_resource(RESOURCE_ID_IMAGE_TEXTBOX_BR);
   
   textbox->transparent = false;
+  textbox->hide_bottom_decoration = false;
   
   // Set update procs
   layer_set_update_proc(textbox->layer, tg_textbox_layer_update_proc);
@@ -119,7 +123,7 @@ void tg_textbox_destroy(Textbox * textbox) {
   gbitmap_destroy(textbox->img_r);
   gbitmap_destroy(textbox->img_bl);
   gbitmap_destroy(textbox->img_br);
-  free(textbox);
+  //free(textbox);
 }
 
 void tg_textbox_mark_dirty(Textbox * textbox) {
@@ -128,4 +132,9 @@ void tg_textbox_mark_dirty(Textbox * textbox) {
 
 void tg_textbox_set_transparent_bg(Textbox * textbox, bool transparent) {
   textbox->transparent = transparent;
+}
+
+// Note: Will not draw bottom decoration, but place will be free instead
+void tg_textbox_set_no_bottom_decoration(Textbox * textbox, bool hide_bottom_decoration) {
+  textbox->hide_bottom_decoration = hide_bottom_decoration;
 }
