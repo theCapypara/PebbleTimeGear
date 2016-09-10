@@ -1,10 +1,13 @@
 {
     "author": "Parakoopa",
-    "dependencies": {},
+    "dependencies": {
+        "pebble-clay": "^1.0.0"
+    },
     "keywords": [],
     "name": "time-gear",
     "pebble": {
         "capabilities": [
+            "configurable",
             "health"
         ],
         "displayName": "Time Gear",
