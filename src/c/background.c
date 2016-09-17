@@ -75,6 +75,10 @@ void tg_bg_update() {
       //APP_LOG(APP_LOG_LEVEL_DEBUG, "Changing background to %d, setting time to %d", current_background, (int) now);
       persist_write_int(PERSIST_TMP_UPDATE_BG_TIME, (int) now);
       //APP_LOG(APP_LOG_LEVEL_DEBUG, "Okay? %s", translate_error(status));
+    } else {
+      if (current_background == 0 && !tg_config.background1) current_background = 1;
+      if (current_background == 1 && !tg_config.background2) current_background = 2;
+      if (current_background == 2 && !tg_config.background3) current_background = 0;
     }
     int resource_id = RESOURCE_ID_IMAGE_BG_1;
     switch (current_background) {

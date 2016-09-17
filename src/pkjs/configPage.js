@@ -48,15 +48,15 @@ module.exports = [
       "type": "text", 
       "defaultValue": imageGallery([
         {
-          "src": "http://parakoopa.de/pebble/test2.png",
+          "src": "http://parakoopa.de/pebble/tg1.png",
           "label": "Background 1"
         },
         {
-          "src": "http://parakoopa.de/pebble/test2.png",
+          "src": "http://parakoopa.de/pebble/tg2.png",
           "label": "Background 2"
         },
         {
-          "src": "http://parakoopa.de/pebble/test2.png",
+          "src": "http://parakoopa.de/pebble/tg3.png",
           "label": "Background 3"
         }
       ])
@@ -195,19 +195,19 @@ module.exports = [
     {
       "type": "select",
       "messageKey": "CfgQuickView",
-      "defaultValue": 1,
-      "description": "What should be done, if a Quick View message is displayed?",
+      "defaultValue": 0,//1,
+      "description": "What should be done, if a Quick View message is displayed? More options will be added soon.",
       "options": [
         { 
           "label": "Nothing (QuickView will hide bottom textbox)",
           "value": 0
-        },
+        }/*,
         { 
           "label": "Move Bottom Textbox Up (Cluttered)",
           "value": 1 
-        }
+        }*/
       ]
-    },
+    }/*,
     { 
       "type": "text", 
       "defaultValue": imageGallery([
@@ -220,7 +220,7 @@ module.exports = [
           "label": "Move Bottom Up"
         }
       ])
-    }
+    }*/
     ]
   },
   {
