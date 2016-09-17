@@ -8,6 +8,7 @@
 #include "temperature.h"
 #include "bottom.h"
 #include "comm.h"
+#include "config.h"
 
 Window *s_main_window;
 
@@ -54,6 +55,7 @@ static void main_window_unload(Window *window) {
 static void tick_handler(struct tm *tick_time, TimeUnits units_changed) {
   tg_time_update();
   tg_steps_update_health();
+  //tg_bg_update(); doesn't work right now
   if (units_changed & DAY_UNIT) {
     tg_date_update();
   }
@@ -64,6 +66,7 @@ static void battery_handler(BatteryChargeState charge) {
 }
 
 static void init() {
+  tg_config_init();
   // Create main Window element and assign to pointer
   s_main_window = window_create();
 

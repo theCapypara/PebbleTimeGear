@@ -1,6 +1,6 @@
 // Weather and Location related functions
 
-var apiKey = 'f039efbe4867b9607dbb4c4c60ab40a5';
+var config = require('./config');
 
 module.exports = {
   watchLocation: function(callback) {
@@ -27,7 +27,8 @@ module.exports = {
   },
   
   updateWeather: function(pos, callback) {
-    var url = 'https://api.forecast.io/forecast/'+apiKey+'/'+pos.coords.latitude+','+pos.coords.longitude;
+    var url = 'https://api.forecast.io/forecast/'+config.get('CfgApiKey')+'/'+pos.coords.latitude+','+pos.coords.longitude;
+    console.log("Requesting with API Key "+config.get('CfgApiKey'));
     var request = new XMLHttpRequest();
     
     request.onload = function() {
@@ -80,9 +81,8 @@ module.exports = {
         break;
     }
     
-    // TODO: Switch
     var dict = {
-      'Temperature': Math.round(celcius) + 'C',
+      'Temperature': config.get('CfgTemperatureUnit') == config.T_FAHRENHEIT ? Math.round(temperature) + 'f' : Math.round(celcius) + 'C',
       'WeatherDescription': weatherPMD
     };
     

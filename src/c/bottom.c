@@ -2,6 +2,7 @@
 #include "bottom.h"
 #include "textbox.h"
 #include "constants.h"
+#include "config.h"
 
 TextLayer *s_bottom_layer;
 Textbox *s_textbox_bottom;
@@ -10,6 +11,7 @@ int mode = 0;
 char bottom_text[128] = " ";
 
 void tg_bottom_add(Window *window) {
+  if (tg_config.bottomDisplay == CONFIG_BOTTOM_NONE) return;
   // Get information about the Window
   Layer *window_layer = window_get_root_layer(window);
 
@@ -20,9 +22,6 @@ void tg_bottom_add(Window *window) {
   if (persist_exists(PERSIST_TMP_LAST_BOTTOM)) {
     persist_read_string(PERSIST_TMP_LAST_BOTTOM, bottom_text, sizeof bottom_text);
   }
-  
-  // TODO SWitch
-  mode = BOTTOM_MODE_WEATHER;
 
   // Improve the layout to be more like a watchface  
   text_layer_set_text(s_bottom_layer, bottom_text);
@@ -40,11 +39,11 @@ void tg_bottom_add(Window *window) {
   // Add it as a child layer to the Window's root layer
   layer_add_child(window_layer, tg_textbox_get_layer(s_textbox_bottom));
   layer_add_child(window_layer, text_layer_get_layer(s_bottom_layer));
-}
+};
 
 void tg_bottom_update_weather(char* weather) {
   APP_LOG(APP_LOG_LEVEL_DEBUG, "Update Weather %s", weather);
-  if (mode != BOTTOM_MODE_WEATHER) return;
+  if (tg_config.bottomDisplay != CONFIG_BOTTOM_WEATHER) return;
   
   char buffer[128]; // TODO: Is this safety buffer actually needed?
   
@@ -54,10 +53,12 @@ void tg_bottom_update_weather(char* weather) {
   // Display this time on the TextLayer
   text_layer_set_text(s_bottom_layer, bottom_text);
   persist_write_string(PERSIST_TMP_LAST_BOTTOM, buffer);
-}
+};
 
 void tg_bottom_remove() {
-  // Destroy TextLayer
-  text_layer_destroy(s_bottom_layer);
-  tg_textbox_destroy(s_textbox_bottom);
-}
+  // Destroy Layer
+  if (s_bottom_layer != NULL) {
+    text_layer_destroy(s_bottom_layer);
+    tg_textbox_destroy(s_textbox_bottom);
+  }
+};

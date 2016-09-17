@@ -1,5 +1,6 @@
 #include <pebble.h>
 #include "steps.h"
+#include "config.h"
 
 Layer *s_bar_layer;
 
@@ -8,9 +9,14 @@ GBitmap *s_bar_full;
 GBitmap *s_bar_full2;
 
 int steps = 0;
-int step_goal = 5000;
 
 void tg_steps_update_proc(Layer *layer, GContext *ctx) {
+  int step_goal = tg_config.stepGoal;
+  APP_LOG(APP_LOG_LEVEL_DEBUG, 
+            "Step goal: %d/%d", 
+            steps,
+            step_goal
+           );
   // Set the compositing mode (GCompOpSet is required for transparency)
   graphics_context_set_compositing_mode(ctx, GCompOpSet);
   
@@ -44,6 +50,7 @@ void tg_steps_update_proc(Layer *layer, GContext *ctx) {
 }
 
 void tg_steps_add(Window * window) {
+  if (!tg_config.showSteps) return;
   Layer *window_layer = window_get_root_layer(window);
   
   s_bar_layer = layer_create(GRect(34, 57, 77, 7));
@@ -58,24 +65,28 @@ void tg_steps_add(Window * window) {
 
 void tg_steps_update_health() {
   #if defined(PBL_HEALTH)
-  HealthMetric metric = HealthMetricStepCount;
-  time_t start = time_start_of_today();
-  time_t end = time(NULL);
-  
-  HealthServiceAccessibilityMask mask = health_service_metric_accessible(metric, 
-    start, end);
-  
-  steps = 0;
-  if(mask & HealthServiceAccessibilityMaskAvailable) {
-    steps = (int)health_service_sum_today(metric);
+  if (s_bar_layer != NULL) {
+    HealthMetric metric = HealthMetricStepCount;
+    time_t start = time_start_of_today();
+    time_t end = time(NULL);
+    
+    HealthServiceAccessibilityMask mask = health_service_metric_accessible(metric, 
+      start, end);
+    
+    steps = 0;
+    if(mask & HealthServiceAccessibilityMaskAvailable) {
+      steps = (int)health_service_sum_today(metric);
+    }
   }
   #endif
 }
 
 void tg_steps_remove() {
-  layer_destroy(s_bar_layer);
-  gbitmap_destroy(s_bar_empty);
-  gbitmap_destroy(s_bar_full);
-  gbitmap_destroy(s_bar_full2);
+  if (s_bar_layer != NULL) {
+    layer_destroy(s_bar_layer);
+    gbitmap_destroy(s_bar_empty);
+    gbitmap_destroy(s_bar_full);
+    gbitmap_destroy(s_bar_full2);
+  }
 }
 

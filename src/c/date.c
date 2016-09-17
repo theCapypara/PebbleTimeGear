@@ -1,6 +1,7 @@
 #include <pebble.h>
 #include "date.h"
 #include "hudfont.h"
+#include "config.h"
 
 Layer *s_date_layer;
 
@@ -12,6 +13,7 @@ void tg_date_update_proc(Layer *layer, GContext *ctx) {
 }
 
 void tg_date_add(Window *window) {
+  if (!tg_config.showDate) return;
   Layer *window_layer = window_get_root_layer(window);
 
   s_date_layer = layer_create(GRect(67, 3, 77, 16));
@@ -22,13 +24,17 @@ void tg_date_add(Window *window) {
 
 void tg_date_update() {
   // Get a tm structure
-  time_t temp = time(NULL);
-  struct tm *tick_time = localtime(&temp);
-  strftime(current_date, 8, "%d/%m", tick_time);
-  layer_mark_dirty(s_date_layer);
+  if (s_date_layer != NULL) {
+    time_t temp = time(NULL);
+    struct tm *tick_time = localtime(&temp);
+    strftime(current_date, 8, tg_config.dateFormat == CONFIG_DATE_MMDD ? "%m/%d" : "%d/%m", tick_time);
+    layer_mark_dirty(s_date_layer);
+  }
 }
 
 void tg_date_remove() {
-  // Destroy TextLayer
-  layer_destroy(s_date_layer);
+  // Destroy Layer
+  if (s_date_layer != NULL) {
+    layer_destroy(s_date_layer);
+  }
 }

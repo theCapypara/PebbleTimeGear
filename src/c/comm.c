@@ -2,9 +2,10 @@
 #include "comm.h"
 #include "temperature.h"
 #include "bottom.h"
+#include "config.h"
 
 // Largest expected inbox and outbox message sizes
-const uint32_t inbox_size = 64;
+const uint32_t inbox_size = 400;
 const uint32_t outbox_size = 0;
 
 void tg_comm_received(DictionaryIterator *iter, void *context) {
@@ -20,6 +21,7 @@ void tg_comm_received(DictionaryIterator *iter, void *context) {
     APP_LOG(APP_LOG_LEVEL_DEBUG, "Rec WeatherDescription");
     tg_bottom_update_weather(weather_tuple->value->cstring);
   }
+  tg_config_update(iter, context);
 }
 
 void tg_comm_init() {
