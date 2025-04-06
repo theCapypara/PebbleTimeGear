@@ -39,7 +39,7 @@ module.exports = [
       "messageKey": "CfgBackgroundCycleInterval",
       "defaultValue": 60,
       "label": "Background Cycle Interval",
-      "description": "The watch will cycle all selected backgrounds in this interval (minutes). Due to memory limitations, the image will only update if the watchface gets reloaded.",
+      "description": "The watch will cycle all selected backgrounds in this interval (minutes).",
       "min": 1,
       "max": 240,
       "step": 1
@@ -60,13 +60,6 @@ module.exports = [
           "label": "Background 3"
         }
       ])
-    },
-    {
-      "type": "input",
-      "messageKey": "CfgApiKey",
-      "defaultValue": "",
-      "label": "Forecast.io API Key",
-      "description": "This API key is used to retrieve weather information. You can get one for free from <a href=\"https://developer.forecast.io/\">the Forecast.io website</a>." 
     }
     ]
   }, 

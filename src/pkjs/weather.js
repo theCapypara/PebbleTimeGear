@@ -2,6 +2,17 @@
 
 var config = require('./config');
 
+function buildUri(url, params) {
+  var char = '?';
+  for (var prop in params) {
+    if (Object.prototype.hasOwnProperty.call(params, prop)) {
+      url += char + prop + '=' + encodeURIComponent(params[prop]);
+      char = '&';
+    }
+  }
+  return url;
+}
+
 module.exports = {
   watchLocation: function(callback) {
     function success(pos) {
@@ -11,7 +22,11 @@ module.exports = {
     }
   
     function error(err) {
-      console.log('location error (' + err.code + '): ' + err.message);
+      if (err != null) {
+        console.log('location error (' + err.code + '): ' + err.message);
+      } else {
+        console.log('location error (unknown - emulator?)');
+      }
     }
     
     // Instead of watching position using watchPosition, we pull every 10 minutes to reduces api calls
@@ -27,8 +42,19 @@ module.exports = {
   },
   
   updateWeather: function(pos, callback) {
-    var url = 'https://api.forecast.io/forecast/'+config.get('CfgApiKey')+'/'+pos.coords.latitude+','+pos.coords.longitude;
-    console.log("Requesting with API Key "+config.get('CfgApiKey'));
+    var params = {
+      latitude: pos.coords.latitude.toString(),
+      longitude: pos.coords.longitude.toString(),
+      current: "temperature_2m,weather_code,is_day",
+      timezone: "auto",
+    };
+
+    if (config.get('CfgTemperatureUnit') === config.T_FAHRENHEIT) {
+      params.temperature_unit = "fahrenheit";
+    }
+
+    var url = buildUri('http://api.open-meteo.com/v1/forecast', params);
+    console.log("Requesting: " + url);
     var request = new XMLHttpRequest();
     
     request.onload = function() {
@@ -42,52 +68,72 @@ module.exports = {
   },
   
   sendWeather: function(weather, callback) {
-    var temperature = weather.currently.temperature;
-    var celcius = (temperature - 32) * 5/9;
+    var temperature = weather.current.temperature_2m;
+    var temperatureUnit = weather.current_units.temperature_2m.slice(-1);
+    var isCelsius = temperatureUnit.toUpperCase() === "C";
+    var temperatureAsFahrenheit = isCelsius ? (temperature - 32) * 5/9 : temperature;
     
     var weatherPMD = "Unknown";
-    switch (weather.currently.icon) {
-      case "clear-day":
-      case "clear-night":
-      case "clear":
-        weatherPMD = temperature < 86 || weather.currently.icon == "clear-night" ? "Clear" : "Sunny";
+    switch (weather.current.weather_code) {
+      case 0:
+      case 1:
+        weatherPMD = temperatureAsFahrenheit < 86 || !weather.current.is_day ? "Clear" : "Sunny";
         break;
-      case "rain":
-        weatherPMD = "Rain";
-        break;
-      case "snow":
-      case "sleet":
-        weatherPMD = "Snow";
-        break;
-      case "wind":
-        weatherPMD = "Wind";
-        break;
-      case "fog":
-        weatherPMD = "Fog";
-        break;
-      case "cloudy":
-      case "partly-cloudy-day":
-      case "partly-cloudy-night":
+      case 2:
+      case 3:
         weatherPMD = "Cloudy";
         break;
-      case "hail":
-        weatherPMD = "Hail";
+      case 45:
+      case 48:
+        weatherPMD = "Fog";
         break;
-      case "thunderstorm":
+      case 51:
+      case 53:
+      case 55:
+        weatherPMD = "Drizzle";
+        break;
+      case 56:
+      case 57:
+        weatherPMD = "Freezing Drizzle";
+        break;
+      case 61:
+      case 63:
+      case 80:
+      case 81:
+        weatherPMD = "Rain";
+        break;
+      case 65:
+      case 82:
+        weatherPMD = "Heavy Rain";
+        break;
+      case 66:
+      case 67:
+        weatherPMD = "Freezing Rain";
+        break;
+      case 71:
+      case 73:
+      case 77:
+      case 85:
+        weatherPMD = "Snow";
+        break;
+      case 75:
+      case 86:
+        weatherPMD = "Heavy Snow";
+        break;
+      case 95:
+      case 96:
+      case 99:
         weatherPMD = "Thunderstorm";
-        break;
-      case "tornado":
-        weatherPMD = "Tornado";
         break;
     }
     
     var dict = {
-      'Temperature': config.get('CfgTemperatureUnit') == config.T_FAHRENHEIT ? Math.round(temperature) + 'f' : Math.round(celcius) + 'C',
+      'Temperature': Math.round(temperature) + temperatureUnit,
       'WeatherDescription': weatherPMD
     };
-    
-    console.log(celcius);
-    console.log(weatherPMD);
+
+    console.log("updating weather");
+    console.log(dict);
     
     Pebble.sendAppMessage(dict, function() {
       console.log('Message sent successfully: ' + JSON.stringify(dict));

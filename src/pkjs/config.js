@@ -2,7 +2,6 @@
 
 module.exports = {
   configDefaults: {
-    CfgApiKey: '',
     CfgTemperatureUnit: 0
   },
   T_FAHRENHEIT: 0,

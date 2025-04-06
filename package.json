@@ -15,7 +15,6 @@
         "messageKeys": [
             "CfgBackground[3]",
             "CfgBackgroundCycleInterval",
-            "CfgApiKey",
             "CfgShowTemperature",
             "CfgTemperatureUnit",
             "CfgShowDate",
@@ -36,21 +35,18 @@
                     "storageFormat": "png",
                     "targetPlatforms": [
                         "basalt",
-                        "chalk",
-                        "diorite"
+                        "emery"
                     ],
                     "type": "bitmap"
                 },
                 {
-                    "file": "images/timegear_chrg",
+                    "file": "images/timegear_chrg.png",
                     "name": "IMAGE_TIMEGEAR_CHARGING",
-                    "targetPlatforms": null,
-                    "type": "bitmap"
-                },
-                {
-                    "file": "images/test1.png",
-                    "name": "IMAGE_TEST_1",
-                    "targetPlatforms": null,
+                    "storageFormat": "png",
+                    "targetPlatforms": [
+                        "basalt",
+                        "emery"
+                    ],
                     "type": "bitmap"
                 },
                 {
@@ -59,8 +55,7 @@
                     "storageFormat": "png",
                     "targetPlatforms": [
                         "basalt",
-                        "chalk",
-                        "diorite"
+                        "emery"
                     ],
                     "type": "bitmap"
                 },
@@ -70,8 +65,7 @@
                     "storageFormat": "png",
                     "targetPlatforms": [
                         "basalt",
-                        "chalk",
-                        "diorite"
+                        "emery"
                     ],
                     "type": "bitmap"
                 },
@@ -81,8 +75,7 @@
                     "storageFormat": "png",
                     "targetPlatforms": [
                         "basalt",
-                        "chalk",
-                        "diorite"
+                        "emery"
                     ],
                     "type": "bitmap"
                 },
@@ -91,8 +84,7 @@
                     "name": "IMAGE_TEXTBOX_R",
                     "targetPlatforms": [
                         "basalt",
-                        "chalk",
-                        "diorite"
+                        "emery"
                     ],
                     "type": "bitmap"
                 },
@@ -101,8 +93,7 @@
                     "name": "IMAGE_TEXTBOX_L",
                     "targetPlatforms": [
                         "basalt",
-                        "chalk",
-                        "diorite"
+                        "emery"
                     ],
                     "type": "bitmap"
                 },
@@ -112,8 +103,7 @@
                     "storageFormat": "png",
                     "targetPlatforms": [
                         "basalt",
-                        "chalk",
-                        "diorite"
+                        "emery"
                     ],
                     "type": "bitmap"
                 },
@@ -123,8 +113,7 @@
                     "storageFormat": "png",
                     "targetPlatforms": [
                         "basalt",
-                        "chalk",
-                        "diorite"
+                        "emery"
                     ],
                     "type": "bitmap"
                 },
@@ -134,8 +123,7 @@
                     "storageFormat": "png",
                     "targetPlatforms": [
                         "basalt",
-                        "chalk",
-                        "diorite"
+                        "emery"
                     ],
                     "type": "bitmap"
                 },
@@ -145,8 +133,7 @@
                     "storageFormat": "png",
                     "targetPlatforms": [
                         "basalt",
-                        "chalk",
-                        "diorite"
+                        "emery"
                     ],
                     "type": "bitmap"
                 },
@@ -155,8 +142,7 @@
                     "name": "IMAGE_SHEET_HUD",
                     "targetPlatforms": [
                         "basalt",
-                        "chalk",
-                        "diorite"
+                        "emery"
                     ],
                     "type": "bitmap"
                 },
@@ -164,9 +150,7 @@
                     "file": "images/bg3.png",
                     "name": "IMAGE_BG_3",
                     "targetPlatforms": [
-                        "basalt",
-                        "chalk",
-                        "diorite"
+                        "basalt"
                     ],
                     "type": "bitmap"
                 },
@@ -174,9 +158,7 @@
                     "file": "images/bg2.png",
                     "name": "IMAGE_BG_2",
                     "targetPlatforms": [
-                        "basalt",
-                        "chalk",
-                        "diorite"
+                        "basalt"
                     ],
                     "type": "bitmap"
                 },
@@ -185,9 +167,7 @@
                     "name": "IMAGE_BG_1",
                     "storageFormat": "png",
                     "targetPlatforms": [
-                        "basalt",
-                        "chalk",
-                        "diorite"
+                        "basalt"
                     ],
                     "type": "bitmap"
                 },
@@ -196,8 +176,7 @@
                     "name": "IMAGE_BAR_FULL2",
                     "targetPlatforms": [
                         "basalt",
-                        "chalk",
-                        "diorite"
+                        "emery"
                     ],
                     "type": "bitmap"
                 },
@@ -207,8 +186,7 @@
                     "storageFormat": "png",
                     "targetPlatforms": [
                         "basalt",
-                        "chalk",
-                        "diorite"
+                        "emery"
                     ],
                     "type": "bitmap"
                 },
@@ -218,8 +196,7 @@
                     "storageFormat": "png",
                     "targetPlatforms": [
                         "basalt",
-                        "chalk",
-                        "diorite"
+                        "emery"
                     ],
                     "type": "bitmap"
                 },
@@ -229,8 +206,7 @@
                     "storageFormat": "png",
                     "targetPlatforms": [
                         "basalt",
-                        "chalk",
-                        "diorite"
+                        "emery"
                     ],
                     "type": "bitmap"
                 },
@@ -240,8 +216,7 @@
                     "storageFormat": "png",
                     "targetPlatforms": [
                         "basalt",
-                        "chalk",
-                        "diorite"
+                        "emery"
                     ],
                     "type": "bitmap"
                 },
@@ -251,8 +226,7 @@
                     "storageFormat": "png",
                     "targetPlatforms": [
                         "basalt",
-                        "chalk",
-                        "diorite"
+                        "emery"
                     ],
                     "type": "bitmap"
                 },
@@ -262,8 +236,7 @@
                     "storageFormat": "png",
                     "targetPlatforms": [
                         "basalt",
-                        "chalk",
-                        "diorite"
+                        "emery"
                     ],
                     "type": "bitmap"
                 },
@@ -273,8 +246,7 @@
                     "storageFormat": "png",
                     "targetPlatforms": [
                         "basalt",
-                        "chalk",
-                        "diorite"
+                        "emery"
                     ],
                     "type": "bitmap"
                 },
@@ -284,8 +256,7 @@
                     "storageFormat": "png",
                     "targetPlatforms": [
                         "basalt",
-                        "chalk",
-                        "diorite"
+                        "emery"
                     ],
                     "type": "bitmap"
                 },
@@ -295,8 +266,7 @@
                     "storageFormat": "png",
                     "targetPlatforms": [
                         "basalt",
-                        "chalk",
-                        "diorite"
+                        "emery"
                     ],
                     "type": "bitmap"
                 },
@@ -306,8 +276,7 @@
                     "storageFormat": "png",
                     "targetPlatforms": [
                         "basalt",
-                        "chalk",
-                        "diorite"
+                        "emery"
                     ],
                     "type": "bitmap"
                 },
@@ -317,8 +286,7 @@
                     "storageFormat": "png",
                     "targetPlatforms": [
                         "basalt",
-                        "chalk",
-                        "diorite"
+                        "emery"
                     ],
                     "type": "bitmap"
                 },
@@ -328,8 +296,7 @@
                     "storageFormat": "png",
                     "targetPlatforms": [
                         "basalt",
-                        "chalk",
-                        "diorite"
+                        "emery"
                     ],
                     "type": "bitmap"
                 },
@@ -338,8 +305,7 @@
                     "name": "IMAGE_BATTERY_0",
                     "targetPlatforms": [
                         "basalt",
-                        "chalk",
-                        "diorite"
+                        "emery"
                     ],
                     "type": "bitmap"
                 },
@@ -349,8 +315,7 @@
                     "name": "FONT_PMD_21",
                     "targetPlatforms": [
                         "basalt",
-                        "chalk",
-                        "diorite"
+                        "emery"
                     ],
                     "type": "font"
                 },
@@ -360,8 +325,7 @@
                     "name": "FONT_PMD_11",
                     "targetPlatforms": [
                         "basalt",
-                        "chalk",
-                        "diorite"
+                        "emery"
                     ],
                     "type": "font"
                 }
@@ -376,5 +340,5 @@
             "watchface": true
         }
     },
-    "version": "1.0.0"
+    "version": "1.1.0"
 }
