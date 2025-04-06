@@ -36,6 +36,7 @@ jobs:
         with:
           flakes-from-devshell: true
           script: |
+            yes | pebble sdk install latest
             pebble build
       - name: Upload build
         uses: actions/upload-artifact@v4
