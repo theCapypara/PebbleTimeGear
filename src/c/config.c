@@ -43,7 +43,7 @@ void tg_config_save_bool(DictionaryIterator *iter, const uint32_t message_key, c
 void tg_config_save_int(DictionaryIterator *iter, const uint32_t message_key, const int config_key) {
   Tuple *tpl = dict_find(iter, message_key);
   if(tpl) {
-    int32_t value = tpl->value->int32;
+    int32_t value = atoi(tpl->value->cstring);
     APP_LOG(APP_LOG_LEVEL_DEBUG, "Config set int %d (%d) to %d", (int)message_key, config_key, (int)value);
     persist_write_int(config_key, value);
   }
