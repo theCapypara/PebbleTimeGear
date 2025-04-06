@@ -10,11 +10,11 @@ It features Time Gears from the game and comes with three backgrounds from the g
 
 Features (all can be customized):
 
-* Displays time (I think this is pretty importa
+* Displays time 
 * Shows date in month/day or day/month format.
-* Displays weather and temperature (Fahrenheit or Celcius) using a forecast.io developer key.
-* When your phone was disconnected, the Time Gear get's stolen (a black shadow appears in it's place).
-* Your watch will also vibrate if the phone get's disconnected.
+* Displays weather and temperature (Fahrenheit or Celcius).
+* When your phone was disconnected, the Time Gear gets stolen (a black shadow appears in its place).
+* Your watch will also vibrate if the phone gets disconnected.
 * HP bar as step counter with custom step goal.
 * "Light" around the Time Gear represents battery level (each is 10%).
 
