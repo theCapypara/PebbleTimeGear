@@ -48,15 +48,15 @@ module.exports = [
       "type": "text", 
       "defaultValue": imageGallery([
         {
-          "src": "http://parakoopa.de/pebble/tg1.png",
+          "src": "http://capypara.de/pebble/tg1.png",
           "label": "Background 1"
         },
         {
-          "src": "http://parakoopa.de/pebble/tg2.png",
+          "src": "http://capypara.de/pebble/tg2.png",
           "label": "Background 2"
         },
         {
-          "src": "http://parakoopa.de/pebble/tg3.png",
+          "src": "http://capypara.de/pebble/tg3.png",
           "label": "Background 3"
         }
       ])
