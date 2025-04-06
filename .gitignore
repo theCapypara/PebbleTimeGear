@@ -1,0 +1,5 @@
+.envrc
+.lock*
+/build
+.idea
+/node_modules

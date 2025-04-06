@@ -1,0 +1,34 @@
+name: Build
+
+on:
+  push:
+    branches:
+      - master
+  pull_request:
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  generate:
+    name: Build
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Install Nix
+        uses: cachix/install-nix-action@v30
+        with:
+          nix_path: nixpkgs=channel:nixos-24.11
+      - name: Run build
+        uses: workflow/nix-shell-action@v3
+        with:
+          flakes-from-devshell: true
+          script: |
+            pebble build
+      - name: Upload build
+        uses: actions/upload-artifact@v4
+        with:
+          name: pebble-app
+          path: build/PebbleTimeGear.pbw
