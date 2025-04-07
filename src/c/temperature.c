@@ -26,7 +26,11 @@ void tg_temperature_add(Window *window) {
   
   Layer *window_layer = window_get_root_layer(window);
 
-  s_temperature_layer = layer_create(GRect(2, 3, 66, 16));
+#if defined(PBL_RECT)
+  s_temperature_layer = layer_create(H_LEF_V_TOP_RECT(2, 3, 66, 16));
+#elif defined(PBL_ROUND)
+  s_temperature_layer = layer_create(H_LEF_V_MID_RECT(2, 0, 66, 16));
+#endif
  
   layer_set_update_proc(s_temperature_layer, tg_temperature_update_proc);
   layer_add_child(window_layer, s_temperature_layer);

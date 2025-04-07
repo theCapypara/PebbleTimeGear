@@ -1,4 +1,5 @@
 #include <pebble.h>
+#include "constants.h"
 #include "steps.h"
 #include "config.h"
 
@@ -53,7 +54,7 @@ void tg_steps_add(Window * window) {
   if (!tg_config.showSteps) return;
   Layer *window_layer = window_get_root_layer(window);
   
-  s_bar_layer = layer_create(GRect(34, 57, 77, 7));
+  s_bar_layer = layer_create(H_MID_V_TOP_RECT(0, 57, 77, 7));
   layer_set_update_proc(s_bar_layer, tg_steps_update_proc);
   
   s_bar_empty = gbitmap_create_with_resource(RESOURCE_ID_IMAGE_BAR_EMPTY);

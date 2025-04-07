@@ -33,307 +33,190 @@
                     "file": "images/timegear_main.png",
                     "name": "IMAGE_TIMEGEAR",
                     "storageFormat": "png",
-                    "targetPlatforms": [
-                        "basalt",
-                        "emery"
-                    ],
                     "type": "bitmap"
                 },
                 {
                     "file": "images/timegear_chrg.png",
                     "name": "IMAGE_TIMEGEAR_CHARGING",
                     "storageFormat": "png",
-                    "targetPlatforms": [
-                        "basalt",
-                        "emery"
-                    ],
                     "type": "bitmap"
                 },
                 {
                     "file": "images/tb_tr.png",
                     "name": "IMAGE_TEXTBOX_TR",
                     "storageFormat": "png",
-                    "targetPlatforms": [
-                        "basalt",
-                        "emery"
-                    ],
                     "type": "bitmap"
                 },
                 {
                     "file": "images/tb_tl.png",
                     "name": "IMAGE_TEXTBOX_TL",
                     "storageFormat": "png",
-                    "targetPlatforms": [
-                        "basalt",
-                        "emery"
-                    ],
                     "type": "bitmap"
                 },
                 {
                     "file": "images/tb_t.png",
                     "name": "IMAGE_TEXTBOX_T",
                     "storageFormat": "png",
-                    "targetPlatforms": [
-                        "basalt",
-                        "emery"
-                    ],
                     "type": "bitmap"
                 },
                 {
                     "file": "images/tb_r.png",
                     "name": "IMAGE_TEXTBOX_R",
-                    "targetPlatforms": [
-                        "basalt",
-                        "emery"
-                    ],
                     "type": "bitmap"
                 },
                 {
                     "file": "images/tb_l.png",
                     "name": "IMAGE_TEXTBOX_L",
-                    "targetPlatforms": [
-                        "basalt",
-                        "emery"
-                    ],
                     "type": "bitmap"
                 },
                 {
                     "file": "images/tb_br.png",
                     "name": "IMAGE_TEXTBOX_BR",
                     "storageFormat": "png",
-                    "targetPlatforms": [
-                        "basalt",
-                        "emery"
-                    ],
                     "type": "bitmap"
                 },
                 {
                     "file": "images/tb_bl.png",
                     "name": "IMAGE_TEXTBOX_BL",
                     "storageFormat": "png",
-                    "targetPlatforms": [
-                        "basalt",
-                        "emery"
-                    ],
                     "type": "bitmap"
                 },
                 {
                     "file": "images/tb_b.png",
                     "name": "IMAGE_TEXTBOX_B",
                     "storageFormat": "png",
-                    "targetPlatforms": [
-                        "basalt",
-                        "emery"
-                    ],
                     "type": "bitmap"
                 },
                 {
                     "file": "images/no-bluetooth.png",
                     "name": "IMAGE_NO_BLUETOOTH",
                     "storageFormat": "png",
-                    "targetPlatforms": [
-                        "basalt",
-                        "emery"
-                    ],
                     "type": "bitmap"
                 },
                 {
                     "file": "images/font2.png",
                     "name": "IMAGE_SHEET_HUD",
-                    "targetPlatforms": [
-                        "basalt",
-                        "emery"
-                    ],
-                    "type": "bitmap"
-                },
-                {
-                    "file": "images/bg3.png",
-                    "name": "IMAGE_BG_3",
-                    "targetPlatforms": [
-                        "basalt"
-                    ],
-                    "type": "bitmap"
-                },
-                {
-                    "file": "images/bg2.png",
-                    "name": "IMAGE_BG_2",
-                    "targetPlatforms": [
-                        "basalt"
-                    ],
                     "type": "bitmap"
                 },
                 {
                     "file": "images/bg1.png",
                     "name": "IMAGE_BG_1",
                     "storageFormat": "png",
-                    "targetPlatforms": [
-                        "basalt"
-                    ],
+                    "type": "bitmap"
+                },
+                {
+                    "file": "images/bg2.png",
+                    "name": "IMAGE_BG_2",
+                    "type": "bitmap"
+                },
+                {
+                    "file": "images/bg3.png",
+                    "name": "IMAGE_BG_3",
                     "type": "bitmap"
                 },
                 {
                     "file": "images/bar3.png",
                     "name": "IMAGE_BAR_FULL2",
-                    "targetPlatforms": [
-                        "basalt",
-                        "emery"
-                    ],
                     "type": "bitmap"
                 },
                 {
                     "file": "images/bar2.png",
                     "name": "IMAGE_BAR_EMPTY",
                     "storageFormat": "png",
-                    "targetPlatforms": [
-                        "basalt",
-                        "emery"
-                    ],
                     "type": "bitmap"
                 },
                 {
                     "file": "images/bar1.png",
                     "name": "IMAGE_BAR_FULL",
                     "storageFormat": "png",
-                    "targetPlatforms": [
-                        "basalt",
-                        "emery"
-                    ],
                     "type": "bitmap"
                 },
                 {
                     "file": "images/90.png",
                     "name": "IMAGE_BATTERY_90",
                     "storageFormat": "png",
-                    "targetPlatforms": [
-                        "basalt",
-                        "emery"
-                    ],
                     "type": "bitmap"
                 },
                 {
                     "file": "images/80.png",
                     "name": "IMAGE_BATTERY_80",
                     "storageFormat": "png",
-                    "targetPlatforms": [
-                        "basalt",
-                        "emery"
-                    ],
                     "type": "bitmap"
                 },
                 {
                     "file": "images/70.png",
                     "name": "IMAGE_BATTERY_70",
                     "storageFormat": "png",
-                    "targetPlatforms": [
-                        "basalt",
-                        "emery"
-                    ],
                     "type": "bitmap"
                 },
                 {
                     "file": "images/60.png",
                     "name": "IMAGE_BATTERY_60",
                     "storageFormat": "png",
-                    "targetPlatforms": [
-                        "basalt",
-                        "emery"
-                    ],
                     "type": "bitmap"
                 },
                 {
                     "file": "images/50.png",
                     "name": "IMAGE_BATTERY_50",
                     "storageFormat": "png",
-                    "targetPlatforms": [
-                        "basalt",
-                        "emery"
-                    ],
                     "type": "bitmap"
                 },
                 {
                     "file": "images/40.png",
                     "name": "IMAGE_BATTERY_40",
                     "storageFormat": "png",
-                    "targetPlatforms": [
-                        "basalt",
-                        "emery"
-                    ],
                     "type": "bitmap"
                 },
                 {
                     "file": "images/30.png",
                     "name": "IMAGE_BATTERY_30",
                     "storageFormat": "png",
-                    "targetPlatforms": [
-                        "basalt",
-                        "emery"
-                    ],
                     "type": "bitmap"
                 },
                 {
                     "file": "images/20.png",
                     "name": "IMAGE_BATTERY_20",
                     "storageFormat": "png",
-                    "targetPlatforms": [
-                        "basalt",
-                        "emery"
-                    ],
                     "type": "bitmap"
                 },
                 {
                     "file": "images/100.png",
                     "name": "IMAGE_BATTERY_100",
                     "storageFormat": "png",
-                    "targetPlatforms": [
-                        "basalt",
-                        "emery"
-                    ],
                     "type": "bitmap"
                 },
                 {
                     "file": "images/10.png",
                     "name": "IMAGE_BATTERY_10",
                     "storageFormat": "png",
-                    "targetPlatforms": [
-                        "basalt",
-                        "emery"
-                    ],
                     "type": "bitmap"
                 },
                 {
                     "file": "images/0.png",
                     "name": "IMAGE_BATTERY_0",
-                    "targetPlatforms": [
-                        "basalt",
-                        "emery"
-                    ],
                     "type": "bitmap"
                 },
                 {
                     "characterRegex": "[0-9: ]",
                     "file": "fonts/PMD_1.1.ttf",
                     "name": "FONT_PMD_21",
-                    "targetPlatforms": [
-                        "basalt",
-                        "emery"
-                    ],
                     "type": "font"
                 },
                 {
                     "characterRegex": "[0-9a-zA-Z,.-;:_()?!'\u00f6\u00fc\u00e4\u00df\u00e9\u00e1\u00ed ]",
                     "file": "fonts/PMD_1.1.ttf",
                     "name": "FONT_PMD_11",
-                    "targetPlatforms": [
-                        "basalt",
-                        "emery"
-                    ],
                     "type": "font"
                 }
             ]
         },
         "sdkVersion": "3",
         "targetPlatforms": [
-            "basalt"
+            "aplite",
+            "basalt",
+            "chalk",
+            "diorite",
+            "emery"
         ],
         "uuid": "027e5574-f659-4c37-b71c-9c47ac8f9d9f",
         "watchapp": {

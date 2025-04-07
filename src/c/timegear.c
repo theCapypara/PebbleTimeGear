@@ -1,4 +1,5 @@
 #include <pebble.h>
+#include "constants.h"
 #include "timegear.h"
 
 BitmapLayer *s_timegear_layer;
@@ -14,8 +15,8 @@ bool currently_connected = false;
 void tg_timegear_add(Window *window) {
   Layer *window_layer = window_get_root_layer(window);
   
-  s_timegear_layer = bitmap_layer_create(GRect(30,52,84,88));
-  s_battery_light_layer = bitmap_layer_create(GRect(30,52,84,88));
+  s_timegear_layer = bitmap_layer_create(H_MID_V_MID_RECT(0,TIMEGEAR_Y_OFFS,84,88));
+  s_battery_light_layer = bitmap_layer_create(H_MID_V_MID_RECT(0,TIMEGEAR_Y_OFFS,84,88));
   
   bitmap_layer_set_compositing_mode(s_timegear_layer, GCompOpSet);
   bitmap_layer_set_compositing_mode(s_battery_light_layer, GCompOpSet);

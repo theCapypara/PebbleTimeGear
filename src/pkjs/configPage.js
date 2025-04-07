@@ -39,7 +39,7 @@ module.exports = [
       "messageKey": "CfgBackgroundCycleInterval",
       "defaultValue": 60,
       "label": "Background Cycle Interval",
-      "description": "The watch will cycle all selected backgrounds in this interval (minutes).",
+      "description": "The watch will cycle all selected backgrounds in this interval (minutes). Due to memory limitations, the image will only update if the watchface gets reloaded.",
       "min": 1,
       "max": 240,
       "step": 1

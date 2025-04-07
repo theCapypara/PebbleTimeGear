@@ -35,16 +35,25 @@ void tg_config_save_bool(DictionaryIterator *iter, const uint32_t message_key, c
   Tuple *tpl = dict_find(iter, message_key);
   if(tpl) {
     bool value = tpl->value->int32 > 0;
-    APP_LOG(APP_LOG_LEVEL_DEBUG, "Config set bool %d (%d) to %d", (int)message_key, config_key, value);
+    APP_LOG(APP_LOG_LEVEL_DEBUG, "Config set bool %d to %d", (int)message_key, value);
     persist_write_bool(config_key, value);
+  }
+};
+
+void tg_config_save_str_int(DictionaryIterator *iter, const uint32_t message_key, const int config_key) {
+  Tuple *tpl = dict_find(iter, message_key);
+  if(tpl) {
+    int32_t value = atoi(tpl->value->cstring);
+    APP_LOG(APP_LOG_LEVEL_DEBUG, "Config set int %d to %d (%s)", (int)message_key, (int)value, tpl->value->cstring);
+    persist_write_int(config_key, value);
   }
 };
 
 void tg_config_save_int(DictionaryIterator *iter, const uint32_t message_key, const int config_key) {
   Tuple *tpl = dict_find(iter, message_key);
   if(tpl) {
-    int32_t value = atoi(tpl->value->cstring);
-    APP_LOG(APP_LOG_LEVEL_DEBUG, "Config set int %d (%d) to %d", (int)message_key, config_key, (int)value);
+    int32_t value = tpl->value->int32;
+    APP_LOG(APP_LOG_LEVEL_DEBUG, "Config set int %d to %d", (int)message_key, (int)value);
     persist_write_int(config_key, value);
   }
 };
@@ -53,7 +62,7 @@ void tg_config_save_string(DictionaryIterator *iter, const uint32_t message_key,
   Tuple *tpl = dict_find(iter, message_key);
   if(tpl) {
     char *value = tpl->value->cstring;
-    APP_LOG(APP_LOG_LEVEL_DEBUG, "Config set string %d (%d) to %s", (int)message_key, config_key, value);
+    APP_LOG(APP_LOG_LEVEL_DEBUG, "Config set string %d to %s", (int)message_key, value);
     persist_write_string(config_key, value);
   }
 };
@@ -66,11 +75,11 @@ void tg_config_update(DictionaryIterator *iter, void *context) {
   tg_config_save_int(iter, MESSAGE_KEY_CfgBackgroundCycleInterval, PERSIST_CFG_BG_CYCLE_INT);
   tg_config_save_bool(iter, MESSAGE_KEY_CfgShowTemperature, PERSIST_CFG_SHOW_TEMP);
   tg_config_save_bool(iter, MESSAGE_KEY_CfgShowDate, PERSIST_CFG_SHOW_DATE);
-  tg_config_save_int(iter, MESSAGE_KEY_CfgDateFormat, PERSIST_CFG_DATE_FORMAT);
+  tg_config_save_str_int(iter, MESSAGE_KEY_CfgDateFormat, PERSIST_CFG_DATE_FORMAT);
   tg_config_save_bool(iter, MESSAGE_KEY_CfgShowSteps, PERSIST_CFG_SHOW_STEPS);
   tg_config_save_int(iter, MESSAGE_KEY_CfgStepGoal, PERSIST_CFG_STEP_GOAL);
-  tg_config_save_int(iter, MESSAGE_KEY_CfgBottomDisplay, PERSIST_CFG_BOTTOM_DISP);
-  tg_config_save_int(iter, MESSAGE_KEY_CfgQuickView, PERSIST_CFG_QUICK_VIEW);
+  tg_config_save_str_int(iter, MESSAGE_KEY_CfgBottomDisplay, PERSIST_CFG_BOTTOM_DISP);
+  tg_config_save_str_int(iter, MESSAGE_KEY_CfgQuickView, PERSIST_CFG_QUICK_VIEW);
   // If any is set, assume config was changed.
   if (dict_find(iter, PERSIST_CFG_BACKGROUND_1)) {
     tg_config_init();

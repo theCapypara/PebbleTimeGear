@@ -24,3 +24,45 @@
 
 #define CONFIG_QV_ACTION_NOTHING  0
 #define CONFIG_QV_ACTION_ROLLUP   1
+
+#define SCREEN_W PBL_PLATFORM_SWITCH(PBL_PLATFORM_TYPE_CURRENT, \
+  /*aplite*/ 144, \
+  /*basalt*/ 144, \
+  /*chalk*/ 180, \
+  /*diorite*/ 144, \
+  /*emery*/ 200)
+
+#define SCREEN_H PBL_PLATFORM_SWITCH(PBL_PLATFORM_TYPE_CURRENT, \
+  /*aplite*/ 168, \
+  /*basalt*/ 168, \
+  /*chalk*/ 180, \
+  /*diorite*/ 168, \
+  /*emery*/ 228)
+
+#define TIMEGEAR_Y_OFFS PBL_PLATFORM_SWITCH(PBL_PLATFORM_TYPE_CURRENT, \
+  /*aplite*/ 12, \
+  /*basalt*/ 12, \
+  /*chalk*/ 12, \
+  /*diorite*/ 12, \
+  /*emery*/ 2)
+
+#define H_LEF_V_TOP_RECT(h_off, v_off, h_siz, v_siz) \
+  GRect(h_off,                                  v_off,                                  h_siz, v_siz)
+#define H_MID_V_TOP_RECT(h_off, v_off, h_siz, v_siz) \
+  GRect((SCREEN_W / 2 - h_siz / 2) + h_off,     v_off,                                  h_siz, v_siz)
+#define H_RIG_V_TOP_RECT(h_off, v_off, h_siz, v_siz) \
+  GRect((SCREEN_W - h_siz) + h_off,             v_off,                                  h_siz, v_siz)
+
+#define H_LEF_V_MID_RECT(h_off, v_off, h_siz, v_siz) \
+  GRect(h_off,                                  (SCREEN_H / 2 - v_siz / 2) + v_off,     h_siz, v_siz)
+#define H_MID_V_MID_RECT(h_off, v_off, h_siz, v_siz) \
+  GRect((SCREEN_W / 2 - h_siz / 2) + h_off,     (SCREEN_H / 2 - v_siz / 2) + v_off,     h_siz, v_siz)
+#define H_RIG_V_MID_RECT(h_off, v_off, h_siz, v_siz) \
+  GRect((SCREEN_W - h_siz) + h_off,             (SCREEN_H / 2 - v_siz / 2) + v_off,     h_siz, v_siz)
+
+#define H_LEF_V_BOT_RECT(h_off, v_off, h_siz, v_siz) \
+  GRect(h_off,                                  (SCREEN_H - v_siz) + v_off, h_siz, v_siz)
+#define H_MID_V_BOT_RECT(h_off, v_off, h_siz, v_siz) \
+  GRect((SCREEN_W / 2 - h_siz / 2) + h_off,     (SCREEN_H - v_siz) + v_off, h_siz, v_siz)
+#define H_RIG_V_BOT_RECT(h_off, v_off, h_siz, v_siz) \
+  GRect((SCREEN_W - h_siz) + h_off,             (SCREEN_H - v_siz) + v_off, h_siz, v_siz)

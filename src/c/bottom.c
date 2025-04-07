@@ -16,7 +16,11 @@ void tg_bottom_add(Window *window) {
   Layer *window_layer = window_get_root_layer(window);
 
   // Create the TextLayer with specific bounds
-  s_bottom_layer = text_layer_create(GRect(19, 153, 106, 27));
+#if defined(PBL_RECT)
+  s_bottom_layer = text_layer_create(H_MID_V_BOT_RECT(0, 13, 106, 27));
+#elif defined(PBL_ROUND)
+  s_bottom_layer = text_layer_create(H_MID_V_BOT_RECT(0, 0, 106, 27));
+#endif
   
   // Init last temperature
   if (persist_exists(PERSIST_TMP_LAST_BOTTOM)) {
@@ -32,7 +36,11 @@ void tg_bottom_add(Window *window) {
   text_layer_set_text_alignment(s_bottom_layer, GTextAlignmentCenter);
   
   // TEXTBOX
-  s_textbox_bottom = tg_textbox_create(GRect(12, 148, 120, 27));
+#if defined(PBL_RECT)
+  s_textbox_bottom = tg_textbox_create(H_MID_V_BOT_RECT(0, 8, 120, 27));
+#elif defined(PBL_ROUND)
+  s_textbox_bottom = tg_textbox_create(H_MID_V_BOT_RECT(0, -5, 120, 27));
+#endif
   tg_textbox_set_transparent_bg(s_textbox_bottom, false);
   tg_textbox_set_no_bottom_decoration(s_textbox_bottom, true);
   
