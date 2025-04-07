@@ -46,9 +46,9 @@ char *translate_error(status_t result) {
 
 void tg_bg_update() {
   // On aplite, don't draw a BG (memory constraints)
-  if (PBL_PLATFORM_TYPE_CURRENT == PlatformTypeAplite) {
+#if defined(PBL_PLATFORM_APLITE)
     return;
-  }
+#endif
 
   time_t now = time(NULL);
   time_t lastTime = (time_t)persist_read_int(PERSIST_TMP_UPDATE_BG_TIME);

@@ -30,6 +30,12 @@
         "resources": {
             "media": [
                 {
+                    "file": "images/menu_icon.png",
+                    "menuIcon": true,
+                    "name": "IMAGE_MENU_ICON",
+                    "type": "bitmap"
+                },
+                {
                     "file": "images/timegear_main.png",
                     "name": "IMAGE_TIMEGEAR",
                     "storageFormat": "png",
