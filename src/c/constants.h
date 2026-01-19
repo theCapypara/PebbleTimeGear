@@ -25,26 +25,40 @@
 #define CONFIG_QV_ACTION_NOTHING  0
 #define CONFIG_QV_ACTION_ROLLUP   1
 
+// TODO: The new Pebble SDK currently does not support aplite and falls back to an old version
+
+#ifdef PBL_PLATFORM_APLITE
+#define SCREEN_W 144
+#define SCREEN_H 168
+#define TIMEGEAR_Y_OFFS 12
+#else
 #define SCREEN_W PBL_PLATFORM_SWITCH(PBL_PLATFORM_TYPE_CURRENT, \
   /*aplite*/ 144, \
   /*basalt*/ 144, \
   /*chalk*/ 180, \
   /*diorite*/ 144, \
-  /*emery*/ 200)
+  /*emery*/ 200, \
+  /*flint*/ 144)
+///*gabbro*/ 260)
 
 #define SCREEN_H PBL_PLATFORM_SWITCH(PBL_PLATFORM_TYPE_CURRENT, \
   /*aplite*/ 168, \
   /*basalt*/ 168, \
   /*chalk*/ 180, \
   /*diorite*/ 168, \
-  /*emery*/ 228)
+  /*emery*/ 228, \
+  /*flint*/ 168)
+///*gabbro*/ 260)
 
 #define TIMEGEAR_Y_OFFS PBL_PLATFORM_SWITCH(PBL_PLATFORM_TYPE_CURRENT, \
   /*aplite*/ 12, \
   /*basalt*/ 12, \
   /*chalk*/ 12, \
   /*diorite*/ 12, \
-  /*emery*/ 2)
+  /*emery*/ 2, \
+  /*flint*/ 12)
+///*gabbro*/ ?)
+#endif
 
 #define H_LEF_V_TOP_RECT(h_off, v_off, h_siz, v_siz) \
   GRect(h_off,                                  v_off,                                  h_siz, v_siz)

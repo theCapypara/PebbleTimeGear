@@ -1,5 +1,5 @@
 // CONFIG
-var Clay = require('pebble-clay');
+var Clay = require('@rebble/clay');
 var clayConfig = require('./configPage');
 var clay = new Clay(clayConfig);
 

@@ -1,7 +1,7 @@
 {
     "author": "Marco 'Capypara' Köpcke",
     "dependencies": {
-        "pebble-clay": "^1.0.4"
+        "@rebble/clay": "^1.0.6"
     },
     "keywords": [],
     "name": "time-gear",
@@ -222,7 +222,9 @@
             "basalt",
             "chalk",
             "diorite",
-            "emery"
+            "emery",
+            "flint",
+            "gabbro"
         ],
         "uuid": "027e5574-f659-4c37-b71c-9c47ac8f9d9f",
         "watchapp": {
