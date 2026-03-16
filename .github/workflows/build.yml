@@ -32,7 +32,7 @@ jobs:
           purge-created: 0
           purge-primary-key: never
       - name: Run build
-        uses: workflow/nix-shell-action@v3.4.0
+        uses: workflow/nix-shell-action@v4.0.0
         continue-on-error: true # TODO: Not entirely sure why this fails even if the commands succeed?
         with:
           flakes-from-devshell: true
