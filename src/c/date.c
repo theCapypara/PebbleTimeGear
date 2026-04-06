@@ -30,8 +30,10 @@ void tg_date_add(Window *window) {
 
 #if defined(PBL_RECT)
   s_date_layer = layer_create(H_RIG_V_TOP_RECT(0, 3, 77, 16));
-#elif defined(PBL_ROUND)
+#elif defined(PBL_PLATFORM_CHALK)
   s_date_layer = layer_create(H_RIG_V_MID_RECT(-6, 1, 32, 54));
+#elif defined(PBL_PLATFORM_GABBRO)
+  s_date_layer = layer_create(H_RIG_V_MID_RECT(-21, 1, 32, 54));
 #endif
  
   layer_set_update_proc(s_date_layer, tg_date_update_proc);

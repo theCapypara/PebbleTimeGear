@@ -11,7 +11,6 @@ char current_temperature[20];
 
 void tg_temperature_update_proc(Layer *layer, GContext *ctx) {
   APP_LOG(APP_LOG_LEVEL_DEBUG, "Redraw Temp %s", current_temperature);
-  if (current_temperature == NULL) return;
   graphics_context_set_compositing_mode(ctx, GCompOpSet);
   tg_hudfont_drawText(ctx, 0, 0, current_temperature, 0);
 }
@@ -28,8 +27,10 @@ void tg_temperature_add(Window *window) {
 
 #if defined(PBL_RECT)
   s_temperature_layer = layer_create(H_LEF_V_TOP_RECT(2, 3, 66, 16));
-#elif defined(PBL_ROUND)
+#elif defined(PBL_PLATFORM_CHALK)
   s_temperature_layer = layer_create(H_LEF_V_MID_RECT(2, 0, 66, 16));
+#elif defined(PBL_PLATFORM_GABBRO)
+  s_temperature_layer = layer_create(H_LEF_V_MID_RECT(17, 0, 66, 16));
 #endif
  
   layer_set_update_proc(s_temperature_layer, tg_temperature_update_proc);
@@ -39,7 +40,7 @@ void tg_temperature_add(Window *window) {
 void tg_temperature_update(char *temperature) {
   if (s_temperature_layer != NULL) {
     APP_LOG(APP_LOG_LEVEL_DEBUG, "Update Temp %s", temperature);
-    if (current_temperature == NULL || strcmp(temperature, current_temperature) != 0) {
+    if (strcmp(temperature, current_temperature) != 0) {
       
       strncpy(current_temperature, temperature, sizeof current_temperature - 1);
       persist_write_string(PERSIST_TMP_TEMPERATURE, current_temperature);

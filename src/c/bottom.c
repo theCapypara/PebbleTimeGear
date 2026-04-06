@@ -16,10 +16,14 @@ void tg_bottom_add(Window *window) {
   Layer *window_layer = window_get_root_layer(window);
 
   // Create the TextLayer with specific bounds
-#if defined(PBL_RECT)
+#if defined(PBL_PLATFORM_EMERY)
+  s_bottom_layer = text_layer_create(H_MID_V_BOT_RECT(0, -25, 106, 16));
+#elif defined(PBL_RECT)
   s_bottom_layer = text_layer_create(H_MID_V_BOT_RECT(0, 13, 106, 27));
-#elif defined(PBL_ROUND)
+#elif defined(PBL_PLATFORM_CHALK)
   s_bottom_layer = text_layer_create(H_MID_V_BOT_RECT(0, 0, 106, 27));
+#elif defined(PBL_PLATFORM_GABBRO)
+  s_bottom_layer = text_layer_create(H_MID_V_BOT_RECT(0, -38, 106, 16));
 #endif
   
   // Init last temperature
@@ -36,13 +40,18 @@ void tg_bottom_add(Window *window) {
   text_layer_set_text_alignment(s_bottom_layer, GTextAlignmentCenter);
   
   // TEXTBOX
-#if defined(PBL_RECT)
+#if defined(PBL_PLATFORM_EMERY)
+  s_textbox_bottom = tg_textbox_create(H_MID_V_BOT_RECT(0, -17, 120, 33));
+#elif defined(PBL_RECT)
   s_textbox_bottom = tg_textbox_create(H_MID_V_BOT_RECT(0, 8, 120, 27));
-#elif defined(PBL_ROUND)
+  tg_textbox_set_no_bottom_decoration(s_textbox_bottom, true);
+#elif defined(PBL_PLATFORM_CHALK)
   s_textbox_bottom = tg_textbox_create(H_MID_V_BOT_RECT(0, -5, 120, 27));
+  tg_textbox_set_no_bottom_decoration(s_textbox_bottom, true);
+#elif defined(PBL_PLATFORM_GABBRO)
+  s_textbox_bottom = tg_textbox_create(H_MID_V_BOT_RECT(0, -30, 120, 33));
 #endif
   tg_textbox_set_transparent_bg(s_textbox_bottom, false);
-  tg_textbox_set_no_bottom_decoration(s_textbox_bottom, true);
   
   // Add it as a child layer to the Window's root layer
   layer_add_child(window_layer, tg_textbox_get_layer(s_textbox_bottom));

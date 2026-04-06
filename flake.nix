@@ -2,7 +2,7 @@
   description = "Pebble TimeGear watch face";
 
   inputs = {
-    pebble.url = "github:pebble-dev/pebble.nix/nixpkgs-bump";
+    pebble.url = "github:theCapypara/pebble.nix/nixpkgs-bump";
     flake-utils.url = "github:numtide/flake-utils";
   };
 

@@ -38,8 +38,8 @@
   /*chalk*/ 180, \
   /*diorite*/ 144, \
   /*emery*/ 200, \
-  /*flint*/ 144)
-///*gabbro*/ 260)
+  /*flint*/ 144, \
+  /*gabbro*/ 260)
 
 #define SCREEN_H PBL_PLATFORM_SWITCH(PBL_PLATFORM_TYPE_CURRENT, \
   /*aplite*/ 168, \
@@ -47,8 +47,8 @@
   /*chalk*/ 180, \
   /*diorite*/ 168, \
   /*emery*/ 228, \
-  /*flint*/ 168)
-///*gabbro*/ 260)
+  /*flint*/ 168, \
+  /*gabbro*/ 260)
 
 #define TIMEGEAR_Y_OFFS PBL_PLATFORM_SWITCH(PBL_PLATFORM_TYPE_CURRENT, \
   /*aplite*/ 12, \
@@ -56,8 +56,8 @@
   /*chalk*/ 12, \
   /*diorite*/ 12, \
   /*emery*/ 2, \
-  /*flint*/ 12)
-///*gabbro*/ ?)
+  /*flint*/ 12, \
+  /*gabbro*/ -12)
 #endif
 
 #define H_LEF_V_TOP_RECT(h_off, v_off, h_siz, v_siz) \
