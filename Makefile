@@ -8,7 +8,7 @@ build/PebbleTimeGear.pbw: $(SOURCES)
 
 all: build/PebbleTimeGear.pbw
 
-emulators:
+emulators: all
 	# we need to sleep due to some issues when running them at the exact same time
 	sleeptime=0; \
 	for plat in $(PLATFORMS); do \
